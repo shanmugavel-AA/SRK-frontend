@@ -1,9 +1,8 @@
-
-'use client';
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Timeline from "../../components/Timeline";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import {
   CalendarDaysIcon,
   UsersIcon,
@@ -23,7 +22,6 @@ const clients = [
   "/assets/About-page/pvr.webp",
   "/assets/About-page/Volkwagen.webp",
 ];
-
 
 const testimonials = [
   {
@@ -163,8 +161,6 @@ const steps = [
 ];
 
 const AboutHero = () => {
- 
-
   const handleGetInTouch = () => {
     router.push("/contact"); // Navigate to contact us page
   };
@@ -277,17 +273,17 @@ const AboutHero = () => {
             About the Strategist
           </h2>
           <p className="md:w-[900px] mx-auto text-center text-lg text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            odit quos eligendi, dolorem eos quo atque cumque sapiente est,
-            nostrum enim velit quasi similique ipsum repellat quaerat magnam
-            saepe porro, omnis nihil ab consequatur provident! Aliquid vel nulla
-            magnam temporibus enim a quam dignissimos, non eius delectus est
-            saepe ratione, libero tempora reprehenderit atque ducimus illum quo,
-            fugiat beatae sunt aliquam molestiae? Inventore ullam qui magnam,
-            quas, commodi deleniti ad vero, porro hic corporis temporibus
-            tempora. At delectus ipsam numquam quasi error! Ut repellendus
-            eligendi laborum, magnam facere iusto alias illum neque omnis
-            fugiat, quod odio. Impedit fugiat ex distinctio.
+            Sharath Ravikumar’s unwavering focus on quality, creativity, and
+            determination inspires businesses to grow, innovate, and succeed in
+            a competitive digital landscape. With extensive expertise in digital
+            marketing, he helps companies unlock new opportunities, achieve
+            measurable results, and strengthen their brand presence. Over the
+            years, Sharath has guided multiple brands and organizations toward
+            sustainable growth through his excellence, innovative strategies,
+            and forward-thinking approach. He continuously explores new ideas,
+            shares actionable insights, and fosters learning to empower teams
+            and individuals, helping them navigate the evolving digital space
+            and achieve long-term success.
           </p>
         </div>
       </section>
@@ -423,7 +419,8 @@ const AboutHero = () => {
             Awards
           </h2>
           <p className="text-lg text-gray-500 mb-12 text-center">
-            Milestones that reflect our innovation and digital excellence across various industries.
+            Milestones that reflect our innovation and digital excellence across
+            various industries.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {awards.map((award, idx) => (
@@ -624,7 +621,8 @@ const AboutHero = () => {
                     Ready to Transform Your Digital Presence?
                   </h3>
                   <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                    Connect with us to create campaigns that transform your online presence into lasting digital success.
+                    Connect with us to create campaigns that transform your
+                    online presence into lasting digital success.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -655,7 +653,3 @@ const AboutHero = () => {
 };
 
 export default AboutHero;
-
-
-
-
