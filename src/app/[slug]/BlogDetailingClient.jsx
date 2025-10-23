@@ -253,7 +253,7 @@ useEffect(() => {
 
     <div className="w-full" ref={containerRef}>
       {/* Hero Image */}
-      <div className="w-full mt-16 sm:mt-20">
+      <div className="w-full mt-20 sm:mt-20">
         <img
           src={blogDetail.bannerUrl || blogDetail.imgUrl}
 //           onLoad={() => {
@@ -265,7 +265,7 @@ useEffect(() => {
       </div>
 
       {/* Meta Info */}
-      <div className="max-w-5xl mx-auto py-6 flex flex-col md:flex-row md:items-center md:justify-between text-gray-700 text-sm sm:text-base border-b gap-4">
+      <div className="max-w-5xl mx-auto py-6 px-4 flex flex-col md:flex-row md:items-center md:justify-between text-gray-700 text-sm sm:text-base border-b gap-4">
         <div className="flex flex-wrap items-center gap-4 sm:gap-8">
           <span className="flex items-center gap-2">
             <User size={18} className="text-green-600" />
@@ -338,7 +338,7 @@ useEffect(() => {
       </div>
 
       {/* 2 Column Layout */}
-      <div className="grid-layout max-w-7xl mx-auto py-8 sm:py-10 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 items-start">
+      <div className="grid-layout max-w-7xl mx-auto py-8 px-4 sm:py-10 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 items-start">
         {/* Left Sidebar */}
         <aside className="left-panel col-span-1 hidden md:block">
           <div className="space-y-10">
@@ -410,7 +410,7 @@ useEffect(() => {
                   key={idx}
                   ref={(el) => (headingRefs.current[headingIndex] = el)}
                   id={`section-${headingIndex}`}
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 sm:mt-6"
+                  className="text-lg sm:text-xl md:text-2xl font-bold mt-4 sm:mt-6"
                 >
                   {c.text}
                 </h2>

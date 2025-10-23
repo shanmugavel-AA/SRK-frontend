@@ -156,12 +156,12 @@ const Hero = () => {
         autoplay={{ delay: 10000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop={true}
-        className="w-full h-[750px] relative"
+        className="w-full h-[600px] md:h-[750px] relative"
         style={{ paddingBottom: "60px" }} // leave space for dots
       >
         {/* Slide 1: Original Hero Section Content */}
         <SwiperSlide>
-          <section className="relative h-[400px] mt-24 md:mt-0 md:h-[750px] flex items-center">
+          <section className="relative h-[300px] mt-24 md:mt-0 md:h-[750px] flex items-center">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-6 py-12 relative z-10">
               {/* Left content (was right content) */}
               <div className="md:w-1/2 text-gray-900 order-last md:order-first z-20">
@@ -225,8 +225,8 @@ const Hero = () => {
               {/* Left content (was right content) */}
               <div className="md:w-1/2 text-gray-900 order-last md:order-first z-20">
                 <div className="inline-block">
-                  <h2 className="text-xl md:text-6xl font-bold text-start">
-                    From Vision to Lasting Legacies
+                  <h2 className="text-4xl md:text-6xl font-bold text-start">
+                    From <span className="text-yellow-400">Vision</span> to Lasting Legacies
                   </h2>
                 </div>
                 <p className="text-lg mb-6 mt-10">
@@ -624,7 +624,7 @@ const Hero = () => {
           <h3 className="text-white text-2xl md:text-4xl font-extrabold mb-3">
             Kickstart Your Digital Journey
           </h3>
-          <div className="text-white text-sm/6 md:text-lg mb-2">
+          <div className="text-white text-sm md:text-lg mb-2">
             Begin today and let Sharath Ravikumar strategise your digital growth.
           </div>
           <button
@@ -654,7 +654,7 @@ const Hero = () => {
         <img
           src="https://sharathravikumar.com/wp-content/uploads/2024/12/sharath.png"
           alt=""
-          className="absolute -right-37 md:right-50 -translate-x-1/2 bottom-0 h-64 object-contain z-20"
+          className="absolute -right-30 md:right-50 -translate-x-1/2 bottom-0 h-64 object-contain z-20"
           draggable="false"
           style={{ pointerEvents: "none" }}
         />
