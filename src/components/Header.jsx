@@ -85,7 +85,7 @@ const Header = () => {
           >
             <Link
               href="/about-us"
-              className={`${isActive("/about") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}
+              className={`${isActive("/about-us") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}
             >
               About
             </Link>
@@ -101,12 +101,12 @@ const Header = () => {
                 >
                   <motion.ul className="flex flex-col text-sm p-2 space-y-2 text-gray-900">
                     <motion.li variants={itemVariants} whileHover="hover" className="cursor-pointer p-2 rounded">
-                      <Link href="/about" className="hover:text-blue-600">
+                      <Link href="/about-us" className={`${isActive("/about-us") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}>
                         Who I Am
                       </Link>
                     </motion.li>
                     <motion.li variants={itemVariants} whileHover="hover" className="cursor-pointer p-2 rounded">
-                      <Link href="/clients" className="hover:text-blue-600">
+                      <Link href="/clients" className={`${isActive("/clients","/about-us") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}>
                         Clients
                       </Link>
                     </motion.li>

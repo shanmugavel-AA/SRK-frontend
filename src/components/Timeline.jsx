@@ -7,7 +7,7 @@ const timelineData = [
     id: 1,
     Year: 2015,
     image:
-      "/assets/years-of-achivement-wpg/Beginning-of-Consulting-Journey.webp",
+      "/assets/year-of-achivement/Beginning-of-Consulting-Journey.webp",
     title: "Beginning of Consulting Journey",
     description:
       "Sharath Ravikumar entered the business world as a digital marketing consultant, providing strategic marketing solutions for small brands to large enterprises. With this creative mind, he helped businesses navigate challenges with tailored strategies. Each successful outcome fuelled him to do something bigger. This marked the rise of a trusted digital marketing strategist.",
@@ -15,7 +15,7 @@ const timelineData = [
   {
     id: 2,
     Year: 2016,
-    image: "/assets/years-of-achivement-wpg/Launch-of-Webbombaa.webp",
+    image: "/assets/year-of-achivement/Launch-of-Webbombaa.webp",
     title: "Launch of Webbombaa",
     description:
       "Sharath Ravikumar founded Webboombaa with a bold vision to encourage brands to make noise in the digital world. Started off as a small team, then turned into a recognised digital marketing company that delivered measurable results. Webboombaa became a symbol of Sharath’s entrepreneurial drive.",
@@ -23,7 +23,7 @@ const timelineData = [
   {
     id: 3,
     Year: 2017,
-    image: "/assets/years-of-achivement-wpg/First-Client-Breakthrough.webp",
+    image: "/assets/year-of-achivement/1-clients.webp",
     title: "First Client Breakthrough",
     description:
       "Webboombaa proudly secured Hiranandhani as their first client. This marked the remarkable step towards the real estate industry. This milestone ignited a journey of growth and innovation with credibility. With this powerful start with successful campaigns, Sharath has set new benchmarks in the real estate industry.",
@@ -31,7 +31,7 @@ const timelineData = [
   {
     id: 4,
     Year: 2018,
-    image: "/assets/years-of-achivement-wpg/Steering-into-Success.webp",
+    image: "/assets/year-of-achivement/Steering-into-Success.webp",
     title: "Steering into Success",
     description:
       "Sharath entered the automobile sector with Webboombaa, earning prestigious clients like Volkswagen and Mercedes-Benz. This growth steered the ability to create impactful campaigns across industries that redefined creativity and digital excellence.",
@@ -39,7 +39,7 @@ const timelineData = [
   {
     id: 5,
     Year: 2019,
-    image: "/assets/years-of-achivement-wpg/Crowned-with-Recognition.webp",
+    image: "/assets/year-of-achivement/Crowned-with-Recognition.webp",
     title: "Crowned with Recognition",
     description:
       "This year saw Webboombaa recognised as the Best Branding Company in Tamil Nadu by the central government. It also expanded its verticals into FMCG and retail industries, collaborating with Jeyachandran Textiles and The Chennai Silks, establishing strong connections with the industry.",
@@ -47,7 +47,7 @@ const timelineData = [
   {
     id: 6,
     Year: 2020,
-    image: "/assets/years-of-achivement-wpg/Won-Amid-Lockdown.webp",
+    image: "/assets/year-of-achivement/Won-Amid-Lockdown.webp",
     title: "Won Amid Lockdown",
     description:
       "Plot twist: Webboombaa crossed five crores in five years with years of dedication and commitment. We celebrated the win with Covid hitting, turning living rooms to office rooms during the lockdown. From Zoom calls to masked meetings, we had constant and unshakeable growth.",
@@ -55,7 +55,7 @@ const timelineData = [
   {
     id: 7,
     Year: 2021,
-    image: "/assets/years-of-achivement-wpg/Award-Winning-Expansion.webp",
+    image: "/assets/year-of-achivement/Award-Winning-Expansion.webp",
     title: "Award-Winning Expansion",
     description:
       "Despite the peak of covid and chaos, Sharath acquired Webboombaa and expanded internationally. A milestone was reached when he partnered with the Brazilian government, and Phoenix Mall and Skyone Mall were on board, which expanded the company’s horizon with the launching of influencer marketing and winning the Best Creative of the Year award.",
@@ -63,7 +63,7 @@ const timelineData = [
   {
     id: 8,
     Year: 2022,
-    image: "/assets/years-of-achivement-wpg/Entry-into-Movie-Promotions.webp",
+    image: "/assets/year-of-achivement/Entry-into-Movie-Promotions.webp",
     title: "Entry into Movie Promotions",
     description:
       "Sharath expanded his venture by entering into movie promotions with Domybrand. The movie promotions reflected his expertise in digital marketing, branding strategies and digital campaigns, which created impactful promotions which connected the audiences to the film.",
@@ -71,7 +71,7 @@ const timelineData = [
   {
     id: 9,
     Year: 2023,
-    image: "/assets/years-of-achivement-wpg/New-Beginnings.webp",
+    image: "/assets/year-of-achivement/New-Beginnings-office.webp",
     title: "New Beginnings",
     description:
       "Sharath exited Webboombaa and established a new brand, Webboombaa.org; this bold step marked a fresh chapter of creativity and growth. This brand was built with years of experience, a global outlook and cutting-edge digital services to deliver measurable impacts. He also established Great Indian Sweets and Great Indian Beverages, which expanded his entrepreneurship journey.",
@@ -79,7 +79,7 @@ const timelineData = [
   {
     id: 10,
     Year: 2024,
-    image: "/assets/years-of-achivement-wpg/Guiding-Future-Professionals.webp",
+    image: "/assets/year-of-achivement/Guiding-Future-Professionals.webp",
     title: "Guiding Future Professionals",
     description:
       "Sharath was invited as a guest lecturer for digital marketing and food and beverage management by Anna University in the master of business administration department. He shared his expertise with academic learning and practical insights that inspire the future MBA graduates.",
@@ -87,7 +87,7 @@ const timelineData = [
   {
     id: 11,
     Year: 2025,
-    image: "/assets/years-of-achivement-wpg/Your-Trusted-Digitalist.webp",
+    image: "/assets/year-of-achivement/truth.webp",
     title: "Your Trusted Digitalist",
     description:
       "Webboombaa.org expanded his horizon by entering into the hospital industry. The company proudly works with various sectors, from education and healthcare to real estate, delivering digital success. Webboombaa stands out in the industry as a leading digital marketing agency in Chennai.",

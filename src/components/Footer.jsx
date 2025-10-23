@@ -18,11 +18,12 @@ const Footer = () => {
     router.push("/contact");
   };
 
-  const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-  ];
+const socialLinks = [
+  { icon: Linkedin, href: "https://www.linkedin.com/in/yourprofile", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/yourprofile", label: "Facebook" },
+  { icon: Twitter, href: "https://twitter.com/yourprofile", label: "Twitter" },
+];
+
 
   const quickLinks = [
     { name: "Home", href: "/" },
@@ -62,20 +63,23 @@ const Footer = () => {
               comprehensive training.
             </p>
             <div className="flex space-x-3">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 flex items-center justify-center rounded-sm hover:bg-yellow-400 hover:text-[#0B63C8] transition"
-                  >
-                    <Icon className="w-5 h-5" />
-                  </a>
-                );
-              })}
-            </div>
+  {socialLinks.map((social, index) => {
+    const Icon = social.icon;
+    return (
+      <a
+        key={index}
+        href={social.href}
+        aria-label={social.label}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-10 h-10 flex items-center justify-center rounded-sm hover:bg-yellow-400 hover:text-[#0B63C8] transition"
+      >
+        <Icon className="w-5 h-5" />
+      </a>
+    );
+  })}
+</div>
+
           </div>
 
           {/* Quick Links */}
@@ -116,32 +120,35 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="font-bold text-lg">Get In Touch</h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-yellow-400" />
-                <span className="text-gray-200">
-                  contact@sharathravikumar.com
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-yellow-400" />
-                <span className="text-gray-200">+91 7200701455</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-yellow-400" />
-                <span className="text-gray-200">
-                  Chennai, Tamil Nadu, India
-                </span>
-              </div>
-            </div>
-            <button
-              onClick={handleSchedule}
-              className="w-full px-6 py-3 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-500 transition"
-            >
-              Schedule a Call
-            </button>
-          </div>
+  <h3 className="font-bold text-lg">Get In Touch</h3>
+  <div className="space-y-4">
+    <div className="flex items-center gap-3">
+      <Mail className="w-5 h-5 text-yellow-400" />
+      <a href="mailto:contact@sharathravikumar.com" className="text-gray-200 hover:underline" target="_blank">
+        contact@sharathravikumar.com
+      </a>
+    </div>
+    <div className="flex items-center gap-3">
+      <Phone className="w-5 h-5 text-yellow-400" />
+      <a href="tel:+917200701455" className="text-gray-200 hover:underline" target="_blank">
+        +91 7200701455
+      </a>
+    </div>
+    <div className="flex items-center gap-3">
+      <MapPin className="w-5 h-5 text-yellow-400" />
+      <a href="https://www.google.com/maps/place/Chennai,+Tamil+Nadu,+India" className="text-gray-200 hover:underline" target="_blank" rel="noopener noreferrer">
+        Chennai, Tamil Nadu, India
+      </a>
+    </div>
+  </div>
+  <button
+    onClick={handleSchedule}
+    className="w-full px-6 py-3 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-500 transition"
+  >
+    Schedule a Call
+  </button>
+</div>
+
         </div>
 
         {/* Bottom Section */}
@@ -151,13 +158,13 @@ const Footer = () => {
           </p>
           <div className="flex gap-6 text-sm">
             <Link
-              href="/privacy"
+              href="/"
               className="text-gray-300 hover:text-yellow-400 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms"
+              href="/"
               className="text-gray-300 hover:text-yellow-400 transition-colors"
             >
               Terms of Service
