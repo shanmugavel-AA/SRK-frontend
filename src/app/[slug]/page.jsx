@@ -1,4 +1,5 @@
 // app/blog/[slug]/page.jsx
+import { notFound } from "next/navigation";
 import BlogDetailClient from "./BlogDetailingClient";
 import axios from "axios";
 
@@ -46,7 +47,9 @@ export default async function BlogDetailPage({ params }) {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
   const blog = res.data.find((b) => b.slug === slug);
 
-  if (!blog) return <div>Blog Not Found</div>;
+    if(!blog){
+      notFound();
+    }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
   const blogUrl = `${siteUrl}/blog/${slug}`;

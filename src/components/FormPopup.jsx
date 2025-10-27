@@ -1,14 +1,15 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import { useLocation, useNavigate} from "react-router-dom";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function FormPopup() {
   const [showForm, setShowForm] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [captchaValue, setCaptchaValue] = useState(null);
 
@@ -34,12 +35,12 @@ export default function FormPopup() {
     setLoading(true);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/forms/submit`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/forms/submit`,
         FormData
       );
 
       if (response.status === 200) {
-        navigate("/thank-you");
+        router.push("/thank-you");
         setShowForm(false);
         setFormData({
           name: "",
@@ -62,7 +63,7 @@ export default function FormPopup() {
       } else {
         alert("error submitting form");
       }
-    }finally{
+    } finally {
       setLoading(false);
     }
   };
@@ -75,7 +76,7 @@ export default function FormPopup() {
     }, 6000);
 
     return () => clearTimeout(timer);
-  }, [location]);
+  }, []);
 
   // Lock/unlock background scroll
   useEffect(() => {
@@ -251,13 +252,10 @@ export default function FormPopup() {
                 </div>
                 {/* Google reCAPTCHA */}
                 <ReCAPTCHA
-                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} 
-                  // replace with your site key
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                   onChange={(value) => {
-    console.log("Captcha value:", value);
-    console.log("Site key:", import.meta.env.VITE_RECAPTCHA_SITE_KEY);
-    setCaptchaValue(value);
-  }}
+                    setCaptchaValue(value);
+                  }}
                 />
 
                 {/* Submit button */}

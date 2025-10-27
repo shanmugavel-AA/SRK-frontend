@@ -13,14 +13,15 @@ import { Mail, Phone, ChevronRight, ChevronLeft } from "lucide-react";
 import { PhoneIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 const clients = [
-  "/assets/About-page/casa-grand.webp",
-  "/assets/About-page/chennai-silk.webp",
-  "/assets/About-page/copper-kitchen.webp",
-  "/assets/About-page/mercedes-benz.webp",
-  "/assets/About-page/palmshore.webp",
-  "/assets/About-page/phoinix.webp",
-  "/assets/About-page/pvr.webp",
-  "/assets/About-page/Volkwagen.webp",
+  "/assets/About-page/auto/Mercedez.webp",
+  "/assets/About-page/ecommerce/Chennai Silks.webp",
+  "/assets/About-page/food/Palmshore.webp",
+  "/assets/About-page/real estate/VGN Homes.webp",
+  "/assets/About-page/health care/kauvery_.webp",
+  "/assets/About-page/mall webp/Palladium logo.webp",
+  "/assets/About-page/real estate/hiranandani_.webp",
+  "/assets/About-page/mall webp/Phoenix Marketcity logo300 resolution.webp",
+  "/assets/About-page/auto/Volkwagen.webp"
 ];
 
 const testimonials = [
@@ -161,6 +162,8 @@ const steps = [
 ];
 
 const AboutHero = () => {
+  const router = useRouter();
+  
   const handleGetInTouch = () => {
     router.push("/contact"); // Navigate to contact us page
   };
@@ -291,8 +294,8 @@ const AboutHero = () => {
       <section className="w-full py-10">
         <div className="max-w-5xl mx-auto px-20">
           <div className="flex flex-col md:flex-row items-center md:justify-center gap-y-2 md:gap-x-10">
-            {steps.map((step) => (
-              <div className="bg-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center w-32 h-32 text-black text-center">
+            {steps.map((step,id) => (
+              <div key={id} className="bg-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center w-32 h-32 text-black text-center">
                 {/* Icon at top */}
                 <div className="w-8 h-8 mb-1">{step.icon}</div>
                 {/* Number in center */}
@@ -446,7 +449,7 @@ const AboutHero = () => {
             <img
               src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&h=350"
               alt="Anna White standing in a field"
-              className="object-cover w-64 md:w-100 h-[500px] self-center md:-mt-16 md:-mr-6"
+              className="object-cover w-100 md:w-100 h-[500px] self-center md:-mt-16 md:-mr-6"
             />
           </div>
           {/* Right: Text */}

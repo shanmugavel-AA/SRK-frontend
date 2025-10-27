@@ -1,11 +1,25 @@
 'use client';
 
 import CalendlyEmbed from "../../components/CalendlyEmbed";
-import { PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { PhoneCall, Mail } from "lucide-react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+
+const clients = [
+  "/assets/About-page/auto/Mercedez.webp",
+  "/assets/About-page/ecommerce/Chennai Silks.webp",
+  "/assets/About-page/food/Palmshore.webp",
+  "/assets/About-page/real estate/VGN Homes.webp",
+  "/assets/About-page/health care/kauvery_.webp",
+  "/assets/About-page/mall webp/Palladium logo.webp",
+  "/assets/About-page/real estate/hiranandani_.webp",
+  "/assets/About-page/mall webp/Phoenix Marketcity logo300 resolution.webp",
+  "/assets/About-page/auto/Volkwagen.webp"
+];
 
 
 const Contact = () => {
@@ -66,77 +80,131 @@ const Contact = () => {
   return (
     <div className="w-full min-h-screen text-gray-800">
       {/* Banner */}
-      <section className="relative bg-blue-800 text-white py-20 mt-20 flex items-center justify-center">
-        <div className="absolute inset-0 bg opacity-80"></div>
-        <div className="text-center px-6">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg">
-            Get In Touch
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto opacity-90">
-            Let’s connect! Reach out for collaborations, projects, or just to
-            say hello.
-          </p>
-        </div>
-      </section>
+      <section className="w-full h-[500px] mt-20 md:h-[600px] flex">
+      {/* Left Column: Blue Content */}
+      <div className="w-1/2 bg flex flex-col justify-center px-12 text-white">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          Let’s Build Something Great Together
+        </h1>
+        <p className="text-lg md:text-xl text-gray-200 mb-6">
+          Have a project in mind or just want to say hello? Reach out — I’d love to hear from you.
+        </p>
 
-      {/* Contact Info + Map */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        {/* Call Card at top center */}
-        <div className="flex justify-center mb-12">
-          <a
-            href="tel:+917200701455"
-            className="flex flex-col text-black p-6 cursor-pointer max-w-[340px] h-[200px]"
-          >
-            <div className="flex flex-col items-center justify-center gap-3 h-full text-center">
-              <PhoneIcon className="w-7 h-7 flex-shrink-0 text-blue-700" />
-              <h2 className="text-sm font-semibold">Call</h2>
-              <p className="text-3xl truncate max-w-full">+91 7200701455</p>
-            </div>
-          </a>
+        {/* Call Numbers */}
+        <div className="space-y-3">
+          <div className="flex items-center space-x-3">
+            <PhoneCall className="w-6 h-6 text-blue-300" />
+            <a href="tel:+911234567890" className="text-white text-lg font-medium hover:underline">
+              +91 12345 67890
+            </a>
+          </div>
+          <div className="flex items-center space-x-3">
+            <PhoneCall className="w-6 h-6 text-blue-300" />
+            <a href="tel:+919876543210" className="text-white text-lg font-medium hover:underline">
+              +91 98765 43210
+            </a>
+          </div>
         </div>
+      </div>
 
-        {/* Email and Address cards side by side */}
-        <div className="flex flex-col sm:flex-row max-w-4xl mx-auto justify-between gap-4 mb-16">
-          {/* Email Card */}
-          <a
-            href="mailto:sharathravikumar@gmail.com"
-            className="flex flex-col text-black p-6 flex-1 cursor-pointer max-w-[340px] h-[140px] mx-auto rounded-md bg-yellow-400 hover:bg-yellow-500 transition-colors duration-300"
-          >
-            <div className="flex flex-col items-center justify-center gap-3 h-full text-center">
-              <EnvelopeIcon className="w-7 h-7 flex-shrink-0 text-black" />
-              <h2 className="text-sm font-semibold">Email</h2>
-              <p className="text-xl leading-snug break-words">
-                sharathravikumar@gmail.com
-              </p>
-            </div>
-          </a>
+      {/* Right Column: Full Image */}
+      <div className="w-1/2 relative">
+        <Image
+          src="/assets/about-us-hero.jpg" 
+          alt="Banner Image"
+          fill
+          className="object-cover"
+        />
+      </div>
+    </section>
 
-          {/* Address Card */}
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=2nd+Floor,+13A,+Subham+Nagar,+Old+Pallavaram,+St.+Thomas+Mount-cum-Pallavaram,+Chennai,+Tamil+Nadu+600117"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col text-black p-6 flex-1 cursor-pointer max-w-[340px] h-[140px] mx-auto rounded-md bg-yellow-400 hover:bg-yellow-500 transition-colors duration-300"
-          >
-            <div className="flex flex-col items-center justify-center gap-3 h-full text-center">
-              <MapPinIcon className="w-7 h-7 flex-shrink-0 text-black" />
-              <h2 className="text-sm font-semibold">Address</h2>
-              <p className="text-sm leading-snug break-words">
-                2nd Floor, 13A, Subham Nagar, St.Thomas Mount-cum-Pallavaram,
-                Chennai, Tamil Nadu 600117
-              </p>
-            </div>
-          </a>
-        </div>
-        {/* Map Section */}
-        <div className="rounded-lg overflow-hidden shadow-xl border border-gray-200 h-[450px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4564.5801581103615!2d80.17250806736554!3d12.96524283177039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525e1338a31c83%3A0x7c67930bee472649!2s2nd%20Floor%2C%2013%2C%20Subham%20Nagar%2C%20Old%20Pallavaram%2C%20Chennai%2C%20St.Thomas%20Mount-cum-Pallavaram%2C%20Tamil%20Nadu%20600117!5e0!3m2!1sen!2sin!4v1756965983580!5m2!1sen!2sin"
-            className="w-full h-full"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </section>
+      <section className="max-w-7xl mx-auto overflow-hidden py-4">
+              <h2 className="text-center text-4xl text-gray-700 font-bold mb-12">
+                Our Clients
+              </h2>
+              <div className="relative w-full">
+                <motion.div
+                  className="flex gap-10"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{
+                    x: {
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: 20,
+                      ease: "linear",
+                    },
+                  }}
+                >
+                  {[...clients, ...clients, ...clients].map((logo, index) => (
+                    <div
+                      key={index}
+                      className="flex-shrink-0 w-32 h-20 flex items-center justify-center"
+                    >
+                      <img
+                        src={logo}
+                        alt={`Client ${index}`}
+                        className="object-contain h-full w-full"
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </section>
+
+      {/* ===== Contact Info Section ===== */}
+      <section className="w-full max-w-7xl h-[600px] mx-auto px-6 py-6 flex flex-col md:flex-row gap-12">
+      {/* Left Column */}
+      <div className="md:w-1/2 flex items-center justify-center">
+        <h2 className="text-7xl font-bold leading-tight text-gray-900">
+          Reach Out & Collaborate
+        </h2>
+      </div>
+
+      {/* Right Column */}
+<div className="md:w-1/2 grid grid-cols-2 gap-6">
+    {/* Left Sub-column: Single Card */}
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      className="bg-white rounded-2xl shadow-xl p-8 h-[400px] mt-40 flex flex-col"
+    >
+      <h3 className="text-4xl font-bold text-gray-900 mb-2 justify-start">Get in Touch</h3>
+      <p className="text-gray-600 text-lg justify-start">
+        Have questions? We are here to answer all your queries and help you get started.
+      </p>
+      <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
+              Reach us
+      </button>
+    </motion.div>
+
+    {/* Right Sub-column: Two Stacked Cards */}
+    <div className="flex flex-col gap-6">
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="bg-white rounded-2xl h-[300px] shadow-xl p-6 flex flex-col"
+      >
+        <h3 className="text-4xl font-bold text-gray-900 mb-1 justify-start">Contact Our Team</h3>
+        <p className="text-gray-700 text-lg justify-start">
+          Our team is ready to provide guidance and support for all your projects.
+        </p>
+        <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
+              Reach us
+      </button>
+      </motion.div>
+
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="bg-white rounded-2xl h-[200px] shadow-xl p-6 flex flex-col"
+      >
+        <h3 className="text-4xl font-bold text-gray-900 mb-1 justify-start">Schedule a Meeting</h3>
+
+        <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
+              Reach us
+      </button>
+      </motion.div>
+    </div>
+  </div>
+
+    </section>
 
       <section className="relative min-h-screen flex items-center justify-center bg-gray-50 overflow-hidden px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">

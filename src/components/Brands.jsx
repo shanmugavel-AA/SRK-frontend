@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const cardVariants = {
   hidden: { opacity: 0, x: 80 },
@@ -18,6 +19,8 @@ const OurBrands = () => {
       <div className="border-2 w-24 mx-auto border-yellow-400 mt-4"></div>
       <div className="text-gray-600 font-medium mx-auto text-center mt-2 mb-8">Crafting experiences through a portfolio of brands that inspire, engage and deliver meaningful results.</div>
       <div className="grid grid-cols-2 mt-6 md:grid-cols-4 gap-8 items-center">
+        
+        <Link href="https://webboombaa.org" target="_blank" passHref>
         <motion.div
           custom={0}
           initial="hidden"
@@ -33,6 +36,8 @@ const OurBrands = () => {
             loading="lazy"
           />
         </motion.div>
+        </Link>
+        <Link href="https://www.greatindiansweets.com/" target="_blank" passHref>
         <motion.div
           custom={1}
           initial="hidden"
@@ -48,6 +53,8 @@ const OurBrands = () => {
             loading="lazy"
           />
         </motion.div>
+        </Link>
+        <Link href="https://greatindianbeverages.com/" target="_blank" passHref>
         <motion.div
           custom={2}
           initial="hidden"
@@ -63,6 +70,8 @@ const OurBrands = () => {
             loading="lazy"
           />
         </motion.div>
+        </Link>
+        <Link href="https://www.brandandmediaworks.com/" target="_blank" passHref>
         <motion.div
           custom={3}
           initial="hidden"
@@ -78,6 +87,7 @@ const OurBrands = () => {
             loading="lazy"
           />
         </motion.div>
+        </Link>
       </div>
     </section>
   );

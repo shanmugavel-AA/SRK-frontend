@@ -163,119 +163,119 @@ const brands = [
   {
     id: 1,
     name: "Brand 1",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    logo: "/assets/client-page/auto/Mercedez.webp",
   },
   {
     id: 2,
     name: "Brand 2",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    logo: "/assets/client-page/mall webp/Palladium logo.webp",
   },
   {
     id: 3,
     name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    logo: "/assets/client-page/mall webp/Phoenix Marketcity logo300 resolution.webp",
   },
   {
     id: 4,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-  },
-  {
-    id: 6,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 4",
+    logo: "/assets/client-page/ecommerce/Chennai Silks.webp",
   },
   {
     id: 5,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 5",
+    logo: "/assets/client-page/ecommerce/Jayachandran.webp",
+  },
+  {
+    id: 6,
+    name: "Brand 6",
+    logo: "/assets/client-page/ecommerce/K fashions - Apparel & Retail.webp",
   },
   {
     id: 7,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 7",
+    logo: "/assets/client-page/real estate/hiranandani_.webp",
   },
   {
     id: 8,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 8",
+    logo: "/assets/client-page/food/Copper kitchen.webp",
   },
   {
     id: 9,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 9",
+    logo: "/assets/client-page/real estate/VGN Homes.webp",
   },
   {
     id: 10,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 10",
+    logo: "/assets/client-page/food/Palmshore.webp",
   },
   {
     id: 11,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 11",
+    logo: "/assets/client-page/health care/Apollo.webp",
   },
   {
     id: 12,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 12",
+    logo: "/assets/client-page/auto/Yamaha_Motor.webp",
   },
   {
     id: 13,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 13",
+    logo: "/assets/client-page/mall webp/PVR Grand Mall.webp",
   },
   {
     id: 14,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 14",
+    logo: "/assets/client-page/real estate/Tata Housing.webp",
   },
   {
     id: 15,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 15",
+    logo: "/assets/client-page/auto/Volkwagen.webp",
   },
   {
     id: 16,
-    name: "Brand 3",
-    logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+    name: "Brand 16",
+    logo: "/assets/client-page/health care/kauvery_.webp",
   },
 ];
 
 const services = [
   {
     id: 1,
-    img: "https://thumbs.dreamstime.com/b/side-view-smart-indian-crypto-trader-investor-analyst-broker-using-laptop-smartphone-analyzing-digital-side-view-smart-272154411.jpg",
+    img: "/assets/consult-sharath/CONSULTING-Services.webp",
     title: "CONSULTING",
     desc: "Expert insights and strategic guidance to unlock potential ROI.",
   },
   {
     id: 2,
-    img: "https://thumbs.dreamstime.com/b/business-people-meeting-high-tech-office-diverse-grup-pointing-digital-board-data-271976731.jpg",
+    img: "/assets/consult-sharath/marketing-services.webp",
     title: "MARKETING",
     desc: "Expert marketing strategies that optimise digital campaigns to stand out in the digital world.",
   },
   {
     id: 3,
-    img: "https://tse2.mm.bing.net/th/id/OIP.gOaJ1je5umxEo9Suw6pD-gHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    img: "/assets/consult-sharath/design-Services.webp",
     title: "DESIGN",
     desc: "Visual creatives that narrate your brand’s story to the audience.",
   },
   {
     id: 4,
-    img: "https://tse1.mm.bing.net/th/id/OIP.o69Pf8rbCzdKINNEJxUwxgHaDt?r=0&w=768&h=384&rs=1&pid=ImgDetMain&o=7&rm=3",
+    img: "/assets/consult-sharath/development-Services.webp",
     title: "DEVELOPMENT",
     desc: "Strong, secure and user-friendly websites and apps tailored to business needs.",
   },
   {
     id: 5,
-    img: "https://strategiccfo360.com/wp-content/uploads/2022/12/AdobeStock_456986840-1.jpg",
+    img: "/assets/consult-sharath/SUPPORT-Services.webp",
     title: "SUPPORT",
     desc: "Round the clock digital support and digital services that safeguard and optimise your website.",
   },
   {
     id: 6,
-    img: "https://as1.ftcdn.net/v2/jpg/06/05/11/12/1000_F_605111295_QyQY4Tk7bv8789bFA0TgGKeTM4zzowdo.jpg",
+    img: "/assets/consult-sharath/analytic-services.webp",
     title: "ANALYTICS",
     desc: "Data-driven insights and access to analytic tools to track the performance.",
   },
@@ -492,7 +492,7 @@ export default function HeroSection() {
         {/* Left Side: Large Image */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            src="/assets/consult-sharath/Hire-A-Digital-Marketing-Consultant.webp"
             alt="Business Visual"
             className="w-full md:h-[500px] object-cover rounded-xl shadow-lg"
           />
@@ -525,39 +525,33 @@ export default function HeroSection() {
 
       {/* brands */}
       <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="text-center mb-4">
-          <h2 className="text-4xl text-gray-700 font-bold mb-2">Our Brands</h2>
-          <p className="text-lg text-gray-600">
-            Proud portfolio with distinguished brands
-          </p>
-        </div>
+  <div className="text-center mb-4">
+    <h2 className="text-4xl text-gray-700 font-bold mb-2">Our Brands</h2>
+    <p className="text-lg text-gray-600">
+      Proud portfolio with distinguished brands
+    </p>
+  </div>
 
-        <div className="grid grid-cols-4 gap-6">
-          {brands.map(({ id, logo, name }) => (
-            <div
-              key={id}
-              className="relative flex items-center justify-center p-2 group overflow-hidden"
-            >
-              {/* Gray Image (always visible) */}
-              <img
-                src={logo}
-                alt={name}
-                className="max-h-20 object-contain w-full filter md:grayscale"
-              />
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    {brands.map(({ id, logo, name }) => (
+      <div
+        key={id}
+        className="relative flex items-center justify-center p-4 group overflow-hidden"
+      >
+        {/* Logo Image */}
+        <img
+          src={logo}
+          alt={name}
+          className="max-h-20 w-full object-contain 
+                     transition-all duration-500 ease-in-out 
+                     grayscale group-hover:grayscale-0 
+                     scale-95 group-hover:scale-100"
+        />
+      </div>
+    ))}
+  </div>
+</section>
 
-              {/* Colored Image (slides up on hover) */}
-              <img
-                src={logo}
-                alt={name}
-                className="absolute inset-0 max-h-20 object-contain w-full 
-            translate-y-full opacity-0
-            transition-all duration-700 ease-in-out
-            group-hover:translate-y-2 group-hover:opacity-100"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* case Studies */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 relative">

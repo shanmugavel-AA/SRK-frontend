@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop"
 import StickyCtaForm from "../components/StickyCtaForm"
-
+import FormPopup from "../components/FormPopup";
 
 export default function RootLayout({ children }) {
 
@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Header />
+        <FormPopup/>
         {children}
         <Footer />
         <ScrollToTop/>

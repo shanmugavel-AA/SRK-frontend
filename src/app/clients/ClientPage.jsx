@@ -6,99 +6,238 @@ import Testimonials from "../../components/Testimonials";
 
 const Clients = () => {
   const categories = [
-    { name: "Educational", icon: GraduationCap },
+    { name: "Real Estate", icon: GraduationCap },
     { name: "Healthcare", icon: HeartPulse },
-    { name: "Retail", icon: ShoppingBag },
+    { name: "Education", icon: ShoppingBag },
+    { name: "Automobile", icon: ShoppingBag },
+    { name: "Mall", icon: ShoppingBag },
+    { name: "Food & Beverage", icon: ShoppingBag },
+    { name: "Banking", icon: ShoppingBag },
+    { name: "Political", icon: ShoppingBag },
+    { name: "E-commerce & Retail", icon: ShoppingBag },
   ];
 
   const brands = [
     {
       id: 1,
-      name: "Brand 1",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/1",
-      category: "Educational",
+      name: "Casagrand",
+      logo: "/assets/client-page/real estate/Casagrand.webp",
+      link: null,
+      category: "Real Estate",
     },
     {
       id: 2,
-      name: "Brand 2",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
+      name: "Dac Developers",
+      logo: "/assets/client-page/real estate/Dac Developers.webp",
+      link: null,
+      category: "Real Estate",
+    },
+    {
+      id: 3,
+      name: "Gsquare",
+      logo: "/assets/client-page/real estate/Gsquare.webp",
+      link: null,
+      category: "Real Estate",
+    },
+    {
+      id: 4,
+      name: "Hiranandani",
+      logo: "/assets/client-page/real estate/hiranandani_.webp",
+      link: null,
+      category: "Real Estate",
+    },
+    {
+      id: 5,
+      name: "Sobha Reality",
+      logo: "/assets/client-page/real estate/Sobha Reality.webp",
+      link: null,
+      category: "Real Estate",
+    },
+    {
+      id: 6,
+      name: "Tata Housing",
+      logo: "/assets/client-page/real estate/Tata Housing.webp",
+      link: null,
+      category: "Real Estate",
+    },
+    {
+      id: 7,
+      name: "VGN Homes",
+      logo: "/assets/client-page/real estate/VGN Homes.webp",
+      link: null,
+      category: "Real Estate",
+    },
+    {
+      id: 8,
+      name: "Apollo",
+      logo: "/assets/client-page/health care/Apollo.webp",
       link: null,
       category: "Healthcare",
     },
     {
-      id: 3,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
-    },
-    {
-      id: 4,
-      name: "Brand 4",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: null,
-      category: "Educational",
-    },
-    {
-      id: 5,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Educational",
-    },
-    {
-      id: 6,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
-    },
-    {
-      id: 7,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
-    },
-    {
-      id: 8,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
-    },
-    {
       id: 9,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
+      name: "Chennai Liver Foundation",
+      logo: "/assets/client-page/health care/Chennai Liver foundation.webp",
+      link: null,
+      category: "Healthcare",
     },
     {
       id: 10,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
+      name: "kauvery",
+      logo: "/assets/client-page/health care/kauvery_.webp",
+      link: null,
+      category: "Healthcare",
     },
     {
       id: 11,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
+      name: "Parvathi",
+      logo: "/assets/client-page/health care/Parvathi.webp",
+      link: null,
+      category: "Healthcare",
     },
     {
       id: 12,
-      name: "Brand 3",
-      logo: "https://www.webboombaa.org/wp-content/uploads/2025/09/LVB.png",
-      link: "/case-study/3",
-      category: "Retail",
+      name: "Radian Dental",
+      logo: "/assets/client-page/health care/Radian Dental.webp",
+      link: null,
+      category: "Healthcare",
+    },
+    {
+      id: 13,
+      name: "Mercedez",
+      logo: "/assets/client-page/auto/Mercedez.webp",
+      link: null,
+      category: "Automobile",
+    },
+    {
+      id: 14,
+      name: "Volkswagen",
+      logo: "/assets/client-page/auto/Volkwagen.webp",
+      link: null,
+      category: "Automobile",
+    },
+    {
+      id: 15,
+      name: "Yamaha",
+      logo: "/assets/client-page/auto/Yamaha_Motor.webp",
+      link: null,
+      category: "Automobile",
+    },
+    {
+      id: 16,
+      name: "Grandsquare Mall Velachery",
+      logo: "/assets/client-page/mall webp/Grandsquare Mall Velachery.webp",
+      link: null,
+      category: "Mall",
+    },
+    {
+      id: 17,
+      name: "Palladium",
+      logo: "/assets/client-page/mall webp/Palladium logo.webp",
+      link: null,
+      category: "Mall",
+    },
+    {
+      id: 18,
+      name: "Phoenix Marketcity",
+      logo: "/assets/client-page/mall webp/Phoenix Marketcity logo300 resolution.webp",
+      link: null,
+      category: "Mall",
+    },
+    {
+      id: 19,
+      name: "PVR Grand Mall",
+      logo: "/assets/client-page/mall webp/PVR Grand Mall.webp",
+      link: null,
+      category: "Mall",
+    },
+    {
+      id: 20,
+      name: "Skyone Double Tripple",
+      logo: "/assets/client-page/mall webp/Skyone Double Tripple.webp",
+      link: null,
+      category: "Mall",
+    },
+    {
+      id: 21,
+      name: "Copper kitchen",
+      logo: "/assets/client-page/food/Copper kitchen.webp",
+      link: null,
+      category: "Food & Beverage",
+    },
+    {
+      id: 22,
+      name: "Manoj bhavan",
+      logo: "/assets/client-page/food/Manoj bhavan_.webp",
+      link: null,
+      category: "Food & Beverage",
+    },
+    {
+      id: 23,
+      name: "Palmshore",
+      logo: "/assets/client-page/food/Palmshore.webp",
+      link: null,
+      category: "Food & Beverage",
+    },
+    {
+      id: 24,
+      name: "Rain tree",
+      logo: "/assets/client-page/food/rain tree.webp",
+      link: null,
+      category: "Food & Beverage",
+    },
+    {
+      id: 25,
+      name: "Restrobar",
+      logo: "/assets/client-page/food/restobar.webp",
+      link: null,
+      category: "Food & Beverage",
+    },
+    {
+      id: 26,
+      name: "The Belstead",
+      logo: "/assets/client-page/food/the-belstead-logo.webp",
+      link: null,
+      category: "Food & Beverage",
+    },
+    {
+      id: 27,
+      name: "SBI Home Loans",
+      logo: "/assets/client-page/sbi webp/SBI Home Loas.webp",
+      link: null,
+      category: "Banking",
+    },
+    {
+      id: 28,
+      name: "Chennai Silks",
+      logo: "/assets/client-page/ecommerce/Chennai Silks.webp",
+      link: null,
+      category: "E-commerce & Retail",
+    },
+  {
+      id: 29,
+      name: "K Fashions",
+      logo: "/assets/client-page/ecommerce/K fashions - Apparel & Retail.webp",
+      link: null,
+      category: "E-commerce & Retail",
+    },
+    {
+      id: 30,
+      name: "Sri Kumaran Thangamaligai",
+      logo: "/assets/client-page/ecommerce/Sri Kumaran Thangamaligai.webp",
+      link: null,
+      category: "E-commerce & Retail",
+    },
+    {
+      id: 31,
+      name: "Jayachandran",
+      logo: "/assets/client-page/ecommerce/Jayachandran.webp",
+      link: null,
+      category: "E-commerce & Retail",
     },
   ];
 
-  const [activeCategory, setActiveCategory] = useState("Educational");
+  const [activeCategory, setActiveCategory] = useState("Real Estate");
 
   const filteredBrands = brands.filter(
     (brand) => brand.category === activeCategory
@@ -149,9 +288,9 @@ const Clients = () => {
       </section>
 
       {/* Two Column Layout */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-5 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-6 gap-10">
         {/* Left Column (Enhanced Categories) */}
-        <div className="md:col-span-1 backdrop-blur-md p-6">
+        <div className="md:col-span-2 backdrop-blur-md p-6">
           <h3 className="text-2xl font-bold mb-6 text-blue-700">
             Our Clients
           </h3>
