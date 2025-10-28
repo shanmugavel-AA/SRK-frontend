@@ -3,11 +3,12 @@
 import CalendlyEmbed from "../../components/CalendlyEmbed";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { PhoneCall, Mail } from "lucide-react";
+import { PhoneCall} from "lucide-react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import WhatsappIcon from "../../components/WhatsappIcon";
 
 const clients = [
   "/assets/About-page/auto/Mercedez.webp",
@@ -80,43 +81,50 @@ const Contact = () => {
   return (
     <div className="w-full min-h-screen text-gray-800">
       {/* Banner */}
-      <section className="w-full h-[500px] mt-20 md:h-[600px] flex">
-      {/* Left Column: Blue Content */}
-      <div className="w-1/2 bg flex flex-col justify-center px-12 text-white">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Let’s Build Something Great Together
-        </h1>
-        <p className="text-lg md:text-xl text-gray-200 mb-6">
-          Have a project in mind or just want to say hello? Reach out — I’d love to hear from you.
-        </p>
+      <section className="w-full h-auto mt-20 md:h-[600px] flex flex-col md:flex-row">
+  {/* Left Column: Blue Content */}
+  <div className="w-full md:w-1/2 bg flex flex-col justify-center px-6 md:px-12 py-10 md:py-0 text-white text-center md:text-left">
+    <h1 className="text-3xl md:text-5xl font-bold mb-4">
+      Let’s Build Something Great Together
+    </h1>
+    <p className="text-base md:text-xl text-gray-200 mb-6">
+      Have a project in mind or just want to say hello? Reach out — I’d love to hear from you.
+    </p>
 
-        {/* Call Numbers */}
-        <div className="space-y-3">
-          <div className="flex items-center space-x-3">
-            <PhoneCall className="w-6 h-6 text-blue-300" />
-            <a href="tel:+911234567890" className="text-white text-lg font-medium hover:underline">
-              +91 12345 67890
-            </a>
-          </div>
-          <div className="flex items-center space-x-3">
-            <PhoneCall className="w-6 h-6 text-blue-300" />
-            <a href="tel:+919876543210" className="text-white text-lg font-medium hover:underline">
-              +91 98765 43210
-            </a>
-          </div>
-        </div>
+    {/* Call Numbers */}
+    <div className="space-y-3">
+      <div className="flex items-center justify-center md:justify-start space-x-3">
+        <PhoneCall className="w-6 h-6 text-blue-300" />
+        <a
+          href="tel:+911234567890"
+          className="text-white text-lg font-medium hover:underline"
+        >
+          +91 12345 67890
+        </a>
       </div>
+      <div className="flex items-center justify-center md:justify-start space-x-3">
+        <PhoneCall className="w-6 h-6 text-blue-300" />
+        <a
+          href="tel:+919876543210"
+          className="text-white text-lg font-medium hover:underline"
+        >
+          +91 98765 43210
+        </a>
+      </div>
+    </div>
+  </div>
 
-      {/* Right Column: Full Image */}
-      <div className="w-1/2 relative">
-        <Image
-          src="/assets/about-us-hero.jpg" 
-          alt="Banner Image"
-          fill
-          className="object-cover"
-        />
-      </div>
-    </section>
+  {/* Right Column: Full Image */}
+  <div className="w-full md:w-1/2 relative h-[300px] md:h-auto">
+    <Image
+      src="/assets/about-us-hero.jpg"
+      alt="Banner Image"
+      fill
+      className="object-cover"
+    />
+  </div>
+</section>
+
 
       <section className="max-w-7xl mx-auto overflow-hidden py-4">
               <h2 className="text-center text-4xl text-gray-700 font-bold mb-12">
@@ -152,59 +160,61 @@ const Contact = () => {
             </section>
 
       {/* ===== Contact Info Section ===== */}
-      <section className="w-full max-w-7xl h-[600px] mx-auto px-6 py-6 flex flex-col md:flex-row gap-12">
-      {/* Left Column */}
-      <div className="md:w-1/2 flex items-center justify-center">
-        <h2 className="text-7xl font-bold leading-tight text-gray-900">
-          Reach Out & Collaborate
-        </h2>
-      </div>
+      <section className="w-full max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12">
+  {/* Left Column */}
+  <div className="w-full md:w-1/2 flex items-center justify-center text-center md:text-left">
+    <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight text-gray-900">
+      Reach Out & Collaborate
+    </h2>
+  </div>
 
-      {/* Right Column */}
-<div className="md:w-1/2 grid grid-cols-2 gap-6">
+  {/* Right Column */}
+  <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
     {/* Left Sub-column: Single Card */}
     <motion.div
       whileHover={{ scale: 1.03 }}
-      className="bg-white rounded-2xl shadow-xl p-8 h-[400px] mt-40 flex flex-col"
+      className="bg-white rounded-2xl shadow-xl p-8 flex flex-col order-2 sm:order-1 h-auto md:h-[400px] md:mt-40"
     >
-      <h3 className="text-4xl font-bold text-gray-900 mb-2 justify-start">Get in Touch</h3>
-      <p className="text-gray-600 text-lg justify-start">
+      <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">Get in Touch</h3>
+      <p className="text-gray-600 text-base md:text-lg">
         Have questions? We are here to answer all your queries and help you get started.
       </p>
       <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
-              Reach us
+        Reach us
       </button>
     </motion.div>
 
     {/* Right Sub-column: Two Stacked Cards */}
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 order-1 sm:order-2">
       <motion.div
         whileHover={{ scale: 1.03 }}
-        className="bg-white rounded-2xl h-[300px] shadow-xl p-6 flex flex-col"
+        className="bg-white rounded-2xl shadow-xl p-6 flex flex-col h-auto md:h-[300px]"
       >
-        <h3 className="text-4xl font-bold text-gray-900 mb-1 justify-start">Contact Our Team</h3>
-        <p className="text-gray-700 text-lg justify-start">
+        <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-1">
+          Contact Our Team
+        </h3>
+        <p className="text-gray-700 text-base md:text-lg">
           Our team is ready to provide guidance and support for all your projects.
         </p>
         <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
-              Reach us
-      </button>
+          Reach us
+        </button>
       </motion.div>
 
       <motion.div
         whileHover={{ scale: 1.03 }}
-        className="bg-white rounded-2xl h-[200px] shadow-xl p-6 flex flex-col"
+        className="bg-white rounded-2xl shadow-xl p-6 flex flex-col h-auto md:h-[200px]"
       >
-        <h3 className="text-4xl font-bold text-gray-900 mb-1 justify-start">Schedule a Meeting</h3>
-
+        <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-1">
+          Schedule a Meeting
+        </h3>
         <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
-              Reach us
-      </button>
+          Reach us
+        </button>
       </motion.div>
     </div>
   </div>
-
-    </section>
+</section>
 
       <section className="relative min-h-screen flex items-center justify-center bg-gray-50 overflow-hidden px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
@@ -332,6 +342,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <WhatsappIcon/>
     </div>
   );
 };

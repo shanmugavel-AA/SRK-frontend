@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -60,9 +60,19 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <section style={{ padding: "2rem 0", margin: "0 auto", maxWidth: "1200px", position: "relative", zIndex: 1 }}>
+    <section
+      style={{
+        padding: "2rem 0",
+        margin: "0 auto",
+        maxWidth: "1200px",
+        position: "relative",
+        zIndex: 1,
+      }}
+    >
       <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-        <h2 style={{ fontSize: "2rem", fontWeight: "700", margin: 0 }}>Voices of Our Partners</h2>
+        <h2 style={{ fontSize: "2rem", fontWeight: "700", margin: 0 }}>
+          Voices of Our Partners
+        </h2>
         <p style={{ fontSize: "1rem", color: "#555", marginTop: "0.25rem" }}>
           Hear from our trusted partners across the world.
         </p>
@@ -94,49 +104,47 @@ export default function TestimonialCarousel() {
         >
           {testimonials.map((t) => (
             <SwiperSlide
-  key={t.id}
-  style={{
-    borderRadius: 0,
-    overflow: "hidden",
-    cursor: "pointer",
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-  }}
-  className="testimonial-slide group relative"
->
-  {/* Thumbnail */}
-  <img
-    src={t.img}
-    alt={`testimonial-${t.id}`}
-    style={{
-      width: "100%",
-      height: 250,
-      objectFit: "cover",
-      display: "block",
-    }}
-    onClick={() => openVideo(t)}
-  />
+              key={t.id}
+              style={{
+                borderRadius: 0,
+                overflow: "hidden",
+                cursor: "pointer",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              }}
+              className="testimonial-slide group relative"
+            >
+              {/* Thumbnail */}
+              <img
+                src={t.img}
+                alt={`testimonial-${t.id}`}
+                style={{
+                  width: "100%",
+                  height: 250,
+                  objectFit: "cover",
+                  display: "block",
+                }}
+                onClick={() => openVideo(t)}
+              />
 
-  {/* Hover Overlay */}
-<div
-  className="absolute inset-0 bg-black/40 flex items-center justify-center 
+              {/* Hover Overlay */}
+              <div
+                className="absolute inset-0 bg-black/40 flex items-center justify-center 
              opacity-100 transition-opacity duration-300"
-  onClick={() => openVideo(t)}
->
-  {/* Professional Play Button */}
-  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg border border-gray-200">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      className="w-7 h-7 text-gray-800"
-    >
-      <path d="M8 5v14l11-7z" />
-    </svg>
-  </div>
-</div>
-
-</SwiperSlide>
-
+                onClick={() => openVideo(t)}
+              >
+                {/* Professional Play Button */}
+                <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg border border-gray-200">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className="w-7 h-7 text-gray-800"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </SwiperSlide>
           ))}
         </Swiper>
       </div>

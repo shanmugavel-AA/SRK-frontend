@@ -210,7 +210,7 @@ const Hero = () => {
         <SwiperSlide>
           <div className="flex justify-center items-center h-full mt-10">
             <img
-              src="/assets/client-banner-wpg/client-banner.webp"
+              src="/assets/home-page/HOME PAGE LOGO BANNER copy.webp"
               title="client banner"
               alt="client banner"
               className="w-full h-[600px] object-contain"
@@ -290,7 +290,8 @@ const Hero = () => {
             <h3 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight max-w-md text-left w-full">
               Business Wins
             </h3>
-            <p className="text-sm md:text-lg text-gray-600 mb-8 max-w-sm text-left">
+          
+            <p className="text-sm md:text-lg text-gray-600 mb-2 max-w-sm text-left">
               With more than a decade of proven impact, Sharath Ravikumar has
               empowered businesses and brands to grow, thrive and unlock their
               potential digital success.
@@ -351,6 +352,7 @@ const Hero = () => {
           {/* Heading + button */}
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold">About Sharath</h2>
+            
 
             <button
               onClick={handleExplore}
@@ -376,6 +378,7 @@ const Hero = () => {
               </span>
             </button>
           </div>
+          
 
           {/* Description */}
           <p className="text-gray-500 mb-8 text-lg leading-relaxed">

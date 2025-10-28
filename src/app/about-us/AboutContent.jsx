@@ -26,29 +26,27 @@ const clients = [
 
 const testimonials = [
   {
-    name: "Larry Page",
-    title: "Cofounder",
+    name: "Mr. Arpit Singhal",
+    title: "Manager",
     avatar:
-      "https://images.pexels.com/photos/925786/pexels-photo-925786.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", // Replace with actual avatar path
-    quote: `When you're a Head of a Company like me and you want to learn, there's a big bridge between theory and practice of Digital UX. This is why I think Brishan Bajracharya is a perfect UX Designer for my company.
-
-And even if a lot of great marketers have started by reading blog posts, and articles and doing eLearning, and doing designing classes or whatever, you need something to push forward. And just speaking with professionals with values that are similar to yours can help.`,
+      "/assets/About-page/tata homes.webp", // Replace with actual avatar path
+    quote: `I first met this energetic team during my stint with Tata Valley Homes, their enthusiasm and fresh ideas truly stood out. Sharath and his team delivered exceptional results with creativity, dedication, and passion. It’s been a great experience working with such a committed group. Wishing them continued success ahead!`,
     accent: "Alphabet",
   },
   {
-    name: "Jeff Bezos",
-    title: "CEO",
+    name: "Mr. Ankit",
+    title: "Managing Director",
     avatar:
-      "https://i.pinimg.com/originals/f8/57/f7/f857f761f9dac9e2dbb37d02e2a748d1.jpg",
-    quote: `Brishan delivered an amazing experience for our platform and made our services stand out in a crowded market. Reliable, creative, and professional!   Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam architecto, odit placeat impedit est nisi rem tempora alias ratione sed rerum facere sunt fugit? Molestias quo sit natus saepe numquam.`,
+      "/assets/About-page/Murari.webp",
+    quote: `Sharath truly understand our requirements and deliver exactly what we expect. A day before our site launch, we needed urgent updates late at night — yet the team responded instantly and completed everything perfectly. Their dedication, strategy, and digital expertise helped us reach the right audience across India. Kudos to Sharath and team!`,
     accent: "Amazon",
   },
   {
-    name: "Bahadur",
-    title: "Prime",
+    name: "Mr. Chellapermal",
+    title: "DGM - Marketing",
     avatar:
-      "https://i.pinimg.com/originals/7f/a9/da/7fa9da148555e2c5bea7e347deb901f1.jpg",
-    quote: `The design work by Brishan has helped us communicate more clearly and impactfully. Highly recommend for strategic UX work.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam architecto, odit placeat impedit est nisi rem tempora alias ratione sed rerum facere sunt fugit? Molestias quo sit natus saepe numquam.`,
+      "/assets/About-page/sobha.webp",
+    quote: `Sharath and his team are truly exceptional professionals—creative, dedicated, and results-driven. They clearly understand our brand goals, ensure every campaign reaches the right audience, and deliver outstanding outcomes with complete transparency and commitment. Highly recommended for impactful digital marketing results.`,
     accent: "Government",
   },
 ];
@@ -57,7 +55,7 @@ const cardData = [
   {
     img: "/assets/vaules-mission-growth-vission-wpg/vision.webp",
     verticalText: "VISION",
-    hoverTitle: "Our Goal",
+    hoverTitle: "Our Vision",
     hoverDesc: "Provide brands with expert insights and digital strategies.",
   },
   {
@@ -77,7 +75,7 @@ const cardData = [
   {
     img: "/assets/vaules-mission-growth-vission-wpg/growth.webp",
     verticalText: "GROWTH",
-    hoverTitle: "Our Vision",
+    hoverTitle: "Our Goal",
     hoverDesc:
       "It reflects innovation, commitment and customer-focused strategies.",
   },
@@ -104,7 +102,7 @@ const faqs = [
 const awards = [
   {
     imgSrc:
-      "https://static.vecteezy.com/system/resources/thumbnails/035/775/562/small_2x/ai-generated-golden-trophy-cup-with-stars-and-bokeh-background-3d-rendering-champion-golden-trophy-with-gold-stars-on-a-dark-blue-background-ai-generated-free-photo.jpg",
+      "/assets/About-page/award1.jpg",
     alt: "Award 1",
   },
   {
@@ -204,7 +202,7 @@ const AboutHero = () => {
         <section className="relative w-full h-120 mt-20">
           {/* Background Image */}
           <img
-            src="/assets/about-us-hero.jpg"
+            src="/assets/About-page/about-banner.webp"
             alt="About Hero"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -421,7 +419,8 @@ const AboutHero = () => {
           <h2 className="text-3xl font-bold mb-2 text-center text-gray-800">
             Awards
           </h2>
-          <p className="text-lg text-gray-500 mb-12 text-center">
+          <span className="block h-[3px] bg-yellow-400 w-40 mx-auto animate-shrinkExpandSmall"></span>
+          <p className="text-lg text-gray-500 mb-10 text-center">
             Milestones that reflect our innovation and digital excellence across
             various industries.
           </p>
@@ -434,7 +433,7 @@ const AboutHero = () => {
                 <img
                   src={award.imgSrc}
                   alt={award.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             ))}
@@ -480,38 +479,10 @@ const AboutHero = () => {
       <section className="py-16 md:py-16">
         <div className="max-w-5xl mx-auto rounded-3xl bg-white/70 shadow-xl p-8 md:p-12">
           {/* Section Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 font-display text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold text-center font-display text-foreground">
             Testimonials
           </h2>
-
-          {/* Avatar Row */}
-          <div className="flex items-center justify-center gap-10 md:gap-26 mb-8">
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={testimonial.name}
-                className="flex flex-col items-center"
-              >
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className={`w-16 h-16 rounded-full
-                  ${activeIndex === idx ? "" : ""}
-                bg-gray-100 object-cover mb-2`}
-                />
-                <div className="text-sm font-bold text-gray-600 text-center whitespace-nowrap">
-                  {testimonial.name}
-                </div>
-                <div className="text-xs text-muted-foreground text-center max-w-[100px]">
-                  {testimonial.title}
-                </div>
-                {activeIndex === idx ? (
-                  <div className="h-1 w-10 bg-blue-500 rounded-full"></div>
-                ) : (
-                  <div className="h-1 w-10 invisible"></div>
-                )}
-              </div>
-            ))}
-          </div>
+          <span className="block h-[3px] bg-yellow-400 w-40 mb-10 mt-2 mx-auto animate-shrinkExpand"></span>
 
           {/* Main Testimonial Highlight with Carousel */}
           <div className="relative flex flex-col md:flex-row items-center md:items-start justify-center gap-8 min-h-[280px]">
@@ -522,10 +493,10 @@ const AboutHero = () => {
                 alt={active.name}
                 className="w-52 h-60 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white text-sm px-4 py-1">
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" /> */}
+              {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white text-sm px-4 py-1">
                 {active.name}
-              </div>
+              </div> */}
               {/* Left button fixed */}
               <button
                 className="absolute left-[-38px] top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 rounded-full p-2 shadow transition"

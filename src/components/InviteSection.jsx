@@ -104,7 +104,7 @@ export default function InviteSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.h2
-            className="text-4xl font-bold text-gray-800"
+            className="text-2xl md:text-4xl font-bold text-gray-800"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}

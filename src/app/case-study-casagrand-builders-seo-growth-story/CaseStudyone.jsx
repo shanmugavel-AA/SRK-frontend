@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
 import {
   AlertTriangle,
   Lightbulb,
   Users,
   TrendingUp,
-  Smile,
+  Megaphone,
+  FileStack,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -18,7 +19,7 @@ const CaseStudy = () => {
   return (
     <div className="flex flex-col">
       {/* Banner Section */}
-      <section className="relative w-full h-[320px] md:h-[500px]">
+      <section className="relative w-full h-[320px] md:h-[500px] mt-20">
         <img
           src="https://static.vecteezy.com/system/resources/previews/012/720/076/non_2x/remote-work-social-media-banner-freelancer-working-distant-on-pc-from-home-linkedin-cover-self-employed-occupation-header-cartoon-flat-illustration-vector.jpg"
           alt="Case Study Banner"
@@ -29,9 +30,9 @@ const CaseStudy = () => {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg"
+            className="text-2xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg"
           >
-            Transforming Client Success
+            Casagrand Builders – SEO Growth Story
           </motion.h1>
         </div>
       </section>
@@ -48,9 +49,10 @@ const CaseStudy = () => {
           Project Overview
         </h2>
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
-          A deep dive into how we partnered with our client to overcome industry
-          challenges, implement innovative solutions, and drive measurable
-          growth that impacted their long-term business objectives.
+          A strategic SEO transformation that strengthened Casagrand’s digital
+          presence, improved keyword rankings across multiple cities, and
+          significantly increased qualified organic leads while reducing ad
+          dependency.
         </p>
       </motion.section>
 
@@ -67,11 +69,9 @@ const CaseStudy = () => {
               About the Client
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our client is a leading player in the{" "}
-              <span className="font-semibold">retail technology sector</span>,
-              serving thousands of customers across multiple regions. They
-              approached us seeking a scalable digital solution to modernize
-              their operations and enhance customer engagement.
+              Casagrand is a leading South Indian real estate developer offering
+              premium apartments and villas. They sought to enhance their online
+              visibility, attract quality leads, and improve search performance.
             </p>
           </motion.div>
           <motion.img
@@ -113,11 +113,10 @@ const CaseStudy = () => {
                 The Challenge
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                The client was stuck with{" "}
-                <span className="font-semibold">outdated digital systems</span>{" "}
-                that couldn’t scale, lacked personalization, and slowed down
-                their customer interactions. This created bottlenecks in growth
-                and hindered customer engagement.
+                Casagrand faced intense competition from major real estate
+                brands, low organic rankings for key city-based keywords,
+                duplicate content issues, and heavy reliance on paid ads for
+                lead generation.
               </p>
             </motion.div>
           </div>
@@ -137,11 +136,10 @@ const CaseStudy = () => {
                 Our Solution
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                We designed a{" "}
-                <span className="font-semibold">cloud-first digital platform</span>{" "}
-                with AI-driven personalization, advanced analytics, and a
-                seamless user experience. Security, scalability, and performance
-                were at the core of our strategy — ensuring long-term success.
+                We implemented a comprehensive SEO strategy, fixing 300+
+                technical issues, optimizing 100+ project pages, creating
+                city-specific content, and building high-quality backlinks to
+                boost rankings, visibility, and organic lead generation.
               </p>
             </motion.div>
             <motion.img
@@ -169,11 +167,16 @@ const CaseStudy = () => {
           >
             Key Results
           </motion.h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            {[ 
-              { icon: TrendingUp, stat: "+80%", desc: "Increase in conversions" },
-              { icon: Users, stat: "2x", desc: "Growth in active users" },
-              { icon: Smile, stat: "95%", desc: "Customer satisfaction" },
+          <div className="grid md:grid-cols-4 gap-10">
+            {[
+              {
+                icon: TrendingUp,
+                stat: "+530%",
+                desc: "Organic Traffic Growth",
+              },
+              { icon: Users, stat: "125+", desc: "Keywords Ranked on Page 1" },
+              { icon: FileStack, stat: "8.9x", desc: "Rise in Organic Leads" },
+              { icon: Megaphone, stat: "40%", desc: " Drop in Ad Dependency" },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -205,13 +208,10 @@ const CaseStudy = () => {
         className="max-w-6xl mx-auto px-6 py-20 text-center"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-          Conclusion
+          Final Thoughts
         </h2>
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
-          Our collaboration enabled the client to not only overcome immediate
-          challenges but also positioned them for sustainable growth. This
-          project highlights the power of innovation, strategic planning, and
-          execution in driving real impact.
+          Our SEO partnership with Casagrand enhanced their digital dominance across South India, driving organic growth, higher lead conversions, and reduced ad dependency, establishing SEO as a long-term growth engine.
         </p>
       </motion.section>
     </div>

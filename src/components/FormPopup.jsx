@@ -94,14 +94,14 @@ export default function FormPopup() {
     <AnimatePresence>
       {showForm && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col bg-blue-800 overflow-y-auto"
+          className="fixed inset-0 z-50 flex flex-col backdrop-blur-md bg-white/50 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           {/* Close button */}
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-200"
+            className="absolute top-4 right-4 text-black hover:text-blue-800"
             onClick={() => setShowForm(false)}
           >
             <X size={28} />

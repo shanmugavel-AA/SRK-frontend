@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 const achievementsData = [
   {
-    img: "/assets/home-page/Achievements - Sarathkumar.webp",
+    img: "/assets/home-page/vasanth-srk.webp",
     title: "Achievement 1",
     description: "Brief description for Achievement 1.",
   },
@@ -40,11 +40,6 @@ const achievementsData = [
   },
   {
     img: "/assets/home-page/a8.webp",
-    title: "Achievement 7",
-    description: "Brief description for Achievement 7.",
-  },
-  {
-    img: "/assets/home-page/a9.webp",
     title: "Achievement 7",
     description: "Brief description for Achievement 7.",
   },
@@ -109,7 +104,7 @@ export default function Achievements() {
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12">
       <div className="max-w-7xl mx-auto text-center mb-8">
         <h3 className="text-3xl font-bold mb-4">Our Achievements</h3>
-        <div className="border-2 border-yellow-300 w-40 mx-auto mb-2"></div>
+        <span className="block h-[3px] bg-yellow-400 w-40 mx-auto animate-shrinkExpand"></span>
         <p className="text-gray-700 font-medium mt-2 mb-8">
         Our Growth Story Defined by Remarkable Milestones and Achievements
         </p>

@@ -52,108 +52,58 @@ const caseStudies = [
   {
     id: 1,
     img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    title: "Case Study Title 1",
-    link: "/case-study-1",
-    desc: "Summary for case study 1. Animi aperiam suscipit voluptas provident neque laborum ea distinctio, perspiciatis quas, atque harum incidunt. Hic, omnis consectetur.",
+    title: "Casagrand Builders – SEO Growth Story",
+    link: "case-study-casagrand-builders-seo-growth-story",
+    desc: "Casagrand, one of South India’s leading real estate developers, wanted to boost organic visibility and reduce ad dependency. Through precise SEO strategies, we transformed their digital presence across multiple cities.",
     stats: [
       {
         icon: <FiTrendingUp size={24} />,
-        title: "Growth",
-        content: "Steady Increase",
+        title: "Visibility Boost",
+        content: "Top Rankings in 20+ Micro-Markets",
       },
       {
         icon: <FiSettings size={24} />,
-        title: "Efficiency",
-        content: "Streamlined Process",
+        title: "Technical Excellence",
+        content: "Fixed 300+ crawl errors",
       },
       {
         icon: <MdLightbulbOutline size={24} />,
-        title: "Innovation",
-        content: "New Ideas",
+        title: "Content Strategy",
+        content: " 100+ optimized project pages",
       },
       {
         icon: <FiTarget size={24} />,
-        title: "Focus",
-        content: "Targeted Approach",
+        title: "Lead Growth",
+        content: "Organic leads 600+ per month",
       },
     ],
   },
   {
     id: 2,
     img: "https://images.unsplash.com/photo-1508385082359-f59a798cd2e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    title: "Case Study Title 2",
-    desc: "Summary for case study 2. Dignissimos dolores veritatis repellat earum mollitia aliquam.",
-    link: "",
+    title: "Kauvery Hospital – SEO Transformation Story",
+    desc: "Kauvery Hospital partnered with us to improve visibility for treatment-based and location-specific searches. Through strategic SEO, we strengthened their digital authority and increased qualified patient appointments across all branches.",
+    link: "case-study-kauvery-hospital-seo-transformation-story",
     stats: [
       {
         icon: <MdRocketLaunch size={24} />,
-        title: "Launch",
-        content: "Successful Start",
+        title: "Enhanced Visibility",
+        content: "90+ medical keywords on Page 1",
       },
       {
         icon: <FiTool size={24} />,
-        title: "Maintenance",
-        content: "Reliable Support",
+        title: "Technical Excellence",
+        content: "120+ issues fixed, 95+ mobile score",
       },
       {
         icon: <FiBarChart2 size={24} />,
-        title: "Metrics",
-        content: "Detailed Analysis",
+        title: "Content Authority",
+        content: "80+ optimized pages for top specialties",
       },
       {
         icon: <FiBriefcase size={24} />,
-        title: "Management",
-        content: "Efficient Team",
-      },
-    ],
-  },
-  {
-    id: 3,
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    title: "Case Study Title 3",
-    link: "",
-    desc: "Summary for case study 3. Aliquam voluptate? Ut totam eligendi, earum molestiae ad est facilis.",
-    stats: [
-      {
-        icon: <FiSearch size={24} />,
-        title: "Research",
-        content: "In-depth Study",
-      },
-      {
-        icon: <FiEdit size={24} />,
-        title: "Design",
-        content: "Creative Solutions",
-      },
-      {
-        icon: <FiUsers size={24} />,
-        title: "Partners",
-        content: "Strong Network",
-      },
-      { icon: <FiGlobe size={24} />, title: "Global", content: "Wide Reach" },
-    ],
-  },
-  {
-    id: 4,
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-    title: "Case Study Title 4",
-    link: "",
-    desc: "Summary for case study 4. Voluptas voluptatem ipsam officia.",
-    stats: [
-      { icon: <FiZap size={24} />, title: "Speed", content: "Fast Delivery" },
-      {
-        icon: <FiLock size={24} />,
-        title: "Security",
-        content: "Trusted Solutions",
-      },
-      {
-        icon: <FiPackage size={24} />,
-        title: "Products",
-        content: "Wide Range",
-      },
-      {
-        icon: <FiSmile size={24} />,
-        title: "Success",
-        content: "Customer Satisfaction",
+        title: "Patient Growth",
+        content: "24,000+ monthly organic visits",
       },
     ],
   },
@@ -402,13 +352,13 @@ export default function HeroSection() {
         <section className="relative h-[auto] md:h-[480px] mt-20">
           {/* Background Image */}
           <img
-            src="https://tse4.mm.bing.net/th/id/OIP.0UPsVPv0OEme5yY0hNHMNAHaE8?r=0&w=1920&h=1280&rs=1&pid=ImgDetMain&o=7&rm=3"
+            src="/assets/consult-sharath/consult-banner.webp"
             alt="About Hero"
             className="absolute inset-0 w-full h-full object-cover md:h-[480px]"
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 bg-black opacity-30"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row items-start md:items-center">
             {/* Mobile Heading Only */}
@@ -589,7 +539,7 @@ export default function HeroSection() {
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
                       {cs.title}
                     </h2>
-                    <p className="text-gray-600 text-base md:text-xl mb-4 md:mb-6 w-full md:w-[500px]">
+                    <p className="text-gray-600 text-base md:text-md mb-4 md:mb-6 w-full md:w-[500px]">
                       {cs.desc}
                     </p>
 
@@ -604,11 +554,11 @@ export default function HeroSection() {
                               {icon}
                             </div>
                             <div className="flex space-x-1 text-sm md:text-base">
-                              <span className="text-lg md:text-xl text-yellow-400">
+                              <span className="text-md md:text-lg text-yellow-400">
                                 {statTitle}
                               </span>
                               <span className="mt-1">:</span>
-                              <span className="text-lg md:text-xl text-gray-600">
+                              <span className="text-md md:text-lg text-gray-600">
                                 {content}
                               </span>
                             </div>

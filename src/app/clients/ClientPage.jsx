@@ -15,6 +15,7 @@ const Clients = () => {
     { name: "Banking", icon: ShoppingBag },
     { name: "Political", icon: ShoppingBag },
     { name: "E-commerce & Retail", icon: ShoppingBag },
+    { name: "Information Technology", icon: ShoppingBag },
   ];
 
   const brands = [
@@ -234,6 +235,76 @@ const Clients = () => {
       logo: "/assets/client-page/ecommerce/Jayachandran.webp",
       link: null,
       category: "E-commerce & Retail",
+    },
+    {
+      id: 32,
+      name: "Buhari",
+      logo: "/assets/client-page/food/buhari.webp",
+      link: null,
+      category: "Food & Beverage",
+    },
+    {
+      id: 33,
+      name: "DBS",
+      logo: "/assets/client-page/sbi webp/DBS.webp",
+      link: null,
+      category: "Banking",
+    },
+    {
+      id: 34,
+      name: "Chennai institute of technology",
+      logo: "/assets/client-page/Education/Chennai Institute of Tech.webp",
+      link: null,
+      category: "Education",
+    },
+    {
+      id: 35,
+      name: "Anna University",
+      logo: "/assets/client-page/Education/ANNAUNIVERSITYLOGO.webp",
+      link: null,
+      category: "Education",
+    },
+    {
+      id: 36,
+      name: "Sairam",
+      logo: "/assets/client-page/Education/Sairam.webp",
+      link: null,
+      category: "Education",
+    },
+    {
+      id: 37,
+      name: "Vels University",
+      logo: "/assets/client-page/Education/vels_.webp",
+      link: null,
+      category: "Education",
+    },
+    {
+      id: 38,
+      name: "DMK",
+      logo: "/assets/client-page/Political/DMK.webp",
+      link: null,
+      category: "Political",
+    },
+    {
+      id: 39,
+      name: "Makkal Needhi Maiam",
+      logo: "/assets/client-page/Political/Makkal Needhi Maiam.webp",
+      link: null,
+      category: "Political",
+    },
+    {
+      id: 40,
+      name: "L&T Reality",
+      logo: "/assets/client-page/IT/L&T Reality.webp",
+      link: null,
+      category: "Information Technology",
+    },
+    {
+      id: 41,
+      name: "Zappy works",
+      logo: "/assets/client-page/IT/Zappy works.webp",
+      link: null,
+      category: "Information Technology",
     },
   ];
 

@@ -41,9 +41,10 @@ const BlogSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
         {/* Left column: content */}
         <div className="flex flex-col justify-center p-6 md:h-100 w-full">
-          <h2 className="text-3xl text-gray-600 font-extrabold mb-4">
+          <h2 className="text-3xl text-gray-600 font-extrabold mb-2">
             Recent Blogs
           </h2>
+          <span className="block h-[3px] bg-yellow-400 w-40 mb-2 animate-shrinkExpand"></span>
           <p className="text-gray-700 font-medium mb-6 md:max-w-md">
             Read our blogs to stay informed with expert insights, helpful tips and guides
           </p>

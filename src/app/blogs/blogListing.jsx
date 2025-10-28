@@ -60,6 +60,7 @@ export default function BlogListing() {
           <h1 className="text-5xl font-bold">
             Our <span className="text-yellow-400">Blogs</span>
           </h1>
+          <span className="block h-[3px] bg-yellow-400 w-40 mx-auto mt-4 animate-shrinkExpand"></span>
           <p className="text-gray-600 mt-4 text-xl">
             Explore our latest insights and tips across multiple domains.
           </p>

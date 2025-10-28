@@ -20,6 +20,34 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes shrinkExpand {
+  0%, 100% {
+    width: 10rem; /* starting width (w-40 = 10rem) */
+  }
+  50% {
+    width: 5rem; /* shrunk width (w-20 = 5rem) */
+  }
+}
+
+.animate-shrinkExpand {
+  animation: shrinkExpand 2s ease-in-out infinite;
+}
+
+
+@keyframes shrinkExpandSmall {
+  0%, 100% {
+    width: 8rem; /* starting width (w-40 = 10rem) */
+  }
+  50% {
+    width: 3rem; /* shrunk width (w-20 = 5rem) */
+  }
+}
+
+.animate-shrinkExpandSmall {
+  animation: shrinkExpandSmall 2s ease-in-out infinite;
+}
+
+
 .btn-gradient {
   @apply font-semibold px-6 py-3 rounded-lg transition-transform duration-300 ease-in-out;
   background: linear-gradient(270deg, #0052CC, #007BFF, #0052CC);
@@ -69,3 +97,29 @@ html, body {
   background: linear-gradient(90deg, #0050d0 0%, #0b3f7ee9 100%);
 }
 
+/* Global underline animation for all anchor tags */
+a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust based on your font */
+  width: 0%;
+  height: 2px;
+  background-color: currentColor; /* Matches text color */
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.no-underline-effect::after {
+  display: none;
+}
+
+
+a:hover::after {
+  width: 100%;
+}
