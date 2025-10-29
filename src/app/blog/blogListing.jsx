@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
@@ -29,22 +29,24 @@ export default function BlogListing() {
   }, []);
 
   const categories = ["All", ...new Set(blogs.map((b) => b.category))];
-  const featuredBlog = useMemo(() => blogs.find((b) => b.featured) || blogs[0], [blogs]);
+  const featuredBlog = useMemo(() => blogs.find((b) => b.featured) || null, [blogs]);
 
   const searchResults = useMemo(() => {
     if (!searchTerm.trim()) return [];
     return blogs.filter(
       (b) =>
-        b.id !== featuredBlog.id &&
+        b.id !== (featuredBlog.id || null) &&
         b.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [searchTerm, blogs, featuredBlog]);
 
   const categoryBlogs = useMemo(() => {
     if (searchTerm.trim()) return [];
-    if (selectedCategory === "All") return blogs.filter((b) => b.id !== featuredBlog.id);
+    if (selectedCategory === "All")
+      return blogs.filter((b) => b.id !== (featuredBlog.id || null));
     return blogs.filter(
-      (b) => b.id !== featuredBlog.id && b.category === selectedCategory
+      (b) =>
+        b.id !== (featuredBlog.id || null) && b.category === selectedCategory
     );
   }, [selectedCategory, searchTerm, blogs, featuredBlog]);
 
@@ -91,50 +93,62 @@ export default function BlogListing() {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-lg text-center">No blogs found.</p>
+              <p className="text-gray-500 text-lg text-center">
+                No blogs found.
+              </p>
             )}
           </div>
         )}
 
         {/* Featured Blog */}
-        {featuredBlog && searchTerm.trim() === "" && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-5">Featured Blog</h2>
-            <div className="h-100 overflow-hidden hover:shadow-xl transition flex flex-col md:flex-row">
-              <div className="relative w-full md:w-1/2 h-full">
-                <img
-                  src={featuredBlog.imgUrl}
-                  alt={featuredBlog.title}
-                  className="w-full h-full object-cover transform transition duration-300 ease-in-out hover:scale-105"
-                />
-                {featuredBlog.featured && (
-                  <span className="absolute top-3 left-3 bg-yellow-400 text-white text-xs px-3 py-1 rounded-full shadow">
-                    Featured
-                  </span>
-                )}
-              </div>
-
-              <div className="p-12 flex flex-col justify-between md:w-1/2 relative">
-                <div>
-                  <h3 className="text-4xl font-bold mt-3">{featuredBlog.title}</h3>
-                  <p className="text-xl text-gray-600 mt-4">{featuredBlog.description}</p>
-                  <span className="absolute top-3 right-3 bg-blue-800 text-white text-xs px-3 py-1 rounded-full shadow">
-                    {featuredBlog.category}
-                  </span>
+        {searchTerm.trim() === "" ? (
+          featuredBlog ? (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold mb-5">Featured Blog</h2>
+              <div className="h-100 overflow-hidden hover:shadow-xl transition flex flex-col md:flex-row">
+                <div className="relative w-full md:w-1/2 h-full">
+                  <img
+                    src={featuredBlog.imgUrl}
+                    alt={featuredBlog.title}
+                    className="w-full h-full object-cover transform transition duration-300 ease-in-out hover:scale-105"
+                  />
+                  {featuredBlog.featured && (
+                    <span className="absolute top-3 left-3 bg-yellow-400 text-white text-xs px-3 py-1 rounded-full shadow">
+                      Featured
+                    </span>
+                  )}
                 </div>
-                <div className="mt-6 flex flex-col items-start gap-2">
-                  <DateWithIcon date={featuredBlog.date} />
-                  <Link
-                    href={`/${slugify(featuredBlog.title)}`}
-                    className="text-white bg-blue-800 mt-1 px-4 py-2 rounded-md hover:bg-blue-900 transition"
-                  >
-                    Read More
-                  </Link>
+
+                <div className="p-12 flex flex-col justify-between md:w-1/2 relative">
+                  <div>
+                    <h3 className="text-4xl font-bold mt-3">
+                      {featuredBlog.title}
+                    </h3>
+                    <p className="text-xl text-gray-600 mt-4">
+                      {featuredBlog.description}
+                    </p>
+                    <span className="absolute top-3 right-3 bg-blue-800 text-white text-xs px-3 py-1 rounded-full shadow">
+                      {featuredBlog.category}
+                    </span>
+                  </div>
+                  <div className="mt-6 flex flex-col items-start gap-2">
+                    <DateWithIcon date={featuredBlog.date} />
+                    <Link
+                      href={`/${slugify(featuredBlog.title)}`}
+                      className="text-white bg-blue-800 mt-1 px-4 py-2 rounded-md hover:bg-blue-900 transition"
+                    >
+                      Read More
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          ) : (
+            <p className="text-gray-500 text-center mb-12">
+              No featured blog available.
+            </p>
+          )
+        ) : null}
 
         {/* Category Tabs */}
         {searchTerm.trim() === "" && (
@@ -163,9 +177,13 @@ export default function BlogListing() {
           <>
             <div className="grid md:grid-cols-3 gap-8 mb-8">
               {currentBlogs.length > 0 ? (
-                currentBlogs.map((blog) => <BlogCard key={blog.id} blog={blog} />)
+                currentBlogs.map((blog) => (
+                  <BlogCard key={blog.id} blog={blog} />
+                ))
               ) : (
-                <p className="text-center col-span-3 text-gray-500">No blogs found.</p>
+                <p className="text-center col-span-3 text-gray-500">
+                  No blogs found.
+                </p>
               )}
             </div>
 
@@ -191,7 +209,7 @@ export default function BlogListing() {
       </section>
 
       {/* Newsletter Section */}
-      <div className="w-full py-20 mt-16 bg-[#0A57B4]">
+      {/* <div className="w-full py-20 mt-16 bg-[#0A57B4]">
         <div className="flex flex-col items-center justify-center gap-6 px-4 max-w-3xl mx-auto">
           <div className="text-white text-center space-y-3">
             <h2 className="text-3xl md:text-4xl font-bold">
@@ -217,7 +235,7 @@ export default function BlogListing() {
             </button>
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

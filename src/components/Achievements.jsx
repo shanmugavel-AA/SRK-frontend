@@ -5,43 +5,43 @@ import { useRef, useState, useEffect } from "react";
 const achievementsData = [
   {
     img: "/assets/home-page/vasanth-srk.webp",
-    title: "Achievement 1",
-    description: "Brief description for Achievement 1.",
+    title: "Notable Connection",
+    description: "Wonderful interaction with Member of Parliament Vijay Vasanth.",
   },
   {
     img: "/assets/home-page/a2.webp",
-    title: "Achievement 2",
-    description: "Brief description for Achievement 2.",
+    title: "FilmFlair",
+    description: "Fully Filmy’s Anand Srinivasan Adds a Sweet Twist.",
   },
   {
     img: "/assets/home-page/a3.webp",
-    title: "Achievement 3",
-    description: "Brief description for Achievement 3.",
+    title: "Wellness Impact",
+    description: "Sweet Talk of Wellness with Dr.Arjun Vaidya.",
   },
   {
     img: "/assets/home-page/a4.webp",
-    title: "Achievement 4",
-    description: "Brief description for Achievement 4.",
+    title: "Leadership Connect",
+    description: "A great meeting with DMK IT Wing, Deputy Secretary Karhik Mohan.",
   },
   {
     img: "/assets/home-page/a5.webp",
-    title: "Achievement 5",
-    description: "Brief description for Achievement 5.",
+    title: "Creative Excellence",
+    description: "Proud moment winning three Maddy’s Awards in 2022.",
   },
   {
     img: "/assets/home-page/a6.webp",
-    title: "Achievement 6",
-    description: "Brief description for Achievement 6.",
+    title: "Influencer Connect",
+    description: "A great meeting with famous YouTuber and influencer Irfan.",
   },
   {
     img: "/assets/home-page/a7.webp",
-    title: "Achievement 7",
-    description: "Brief description for Achievement 7.",
+    title: "Strategic Partnership",
+    description: "Teaming up with DAC Developers founder Sathish Kumar Santhanam.",
   },
   {
     img: "/assets/home-page/a8.webp",
-    title: "Achievement 7",
-    description: "Brief description for Achievement 7.",
+    title: "Leadership Milestone",
+    description: "Proud recipient of the 2019 Business Leaders Award.",
   },
 ];
 

@@ -397,7 +397,7 @@ useEffect(() => {
                   key={idx}
                   ref={(el) => (headingRefs.current[headingIndex] = el)}
                   id={`section-${headingIndex}`}
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 sm:mt-6"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 sm:mt-6 text-yellow-400"
                 >
                   {c.text}
                 </h1>

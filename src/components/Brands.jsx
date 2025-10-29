@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const cardVariants = {
   hidden: { opacity: 0, x: 80 },
@@ -71,19 +72,20 @@ const OurBrands = () => {
           />
         </motion.div>
         </Link>
-        <Link href="https://www.brandandmediaworks.com/" className="no-underline-effect" target="_blank" passHref>
+        <Link href="/assets/home-page/BMW.png" className="no-underline-effect" target="_blank" passHref>
         <motion.div
           custom={3}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={cardVariants}
-          className="bg-black bg-opacity-20 backdrop-blur-md shadow-lg rounded-xl flex items-center justify-center h-40 transition-transform transform hover:scale-105 border border-gray-200 dark:border-gray-600"
+          className="bg-opacity-20 backdrop-blur-md shadow-lg rounded-xl flex items-center justify-center h-40 transition-transform transform hover:scale-105 border border-gray-200 dark:border-gray-600"
         >
-          <img
-            src="/assets/home-page/BMW.png"
+          <Image
+            src="/assets/home-page/BMW.webp"
             alt="Brand 4"
-            className="h-12 md:h-12 object-contain"
+            fill
+            className="h-12 md:h-12 object-contain rounded-xl"
             loading="lazy"
           />
         </motion.div>

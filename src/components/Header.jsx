@@ -57,7 +57,7 @@ const Header = () => {
         <Link
           href="/"
           className={`${
-            isActive("/") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600 mr-8"
+            isActive("/") ? "text-blue-600 font-bold no-underline-effect" : "text-black hover:text-blue-600 mr-8 no-underline-effect"
           }`}
         >
           <img
@@ -162,10 +162,10 @@ const Header = () => {
           </div>
 
           <Link
-            href="/blogs"
-            className={`${isActive("/blogs") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}
+            href="/blog"
+            className={`${isActive("/blog") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}
           >
-            Blogs
+            Blog
           </Link>
         </nav>
 
@@ -308,8 +308,8 @@ const Header = () => {
               </li>
 
               <li>
-                <Link href="/blogs" onClick={() => setMobileMenuOpen(false)} className="block text-blue-600 hover:text-yellow-600">
-                  Blogs
+                <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="block text-blue-600 hover:text-yellow-600">
+                  Blog
                 </Link>
               </li>
 

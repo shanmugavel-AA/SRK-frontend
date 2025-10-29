@@ -100,28 +100,28 @@ const Hero = () => {
 
   const slides = [
     {
-      date: "12 Aug 2025",
+      date: "",
       title:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ipsum!",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aliquam aut libero deserunt, ullam aliquid veniam.",
+        "When Legacy Meets Digital-First Innovation",
+      desc: "A powerful meeting with TVS Lucas leadership to redefine marketing through innovation, strategy, and transformation.",
       img: "/assets/home-page/Event-SRK.webp",
     },
     {
-      date: "15 Aug 2025",
-      title: "Another headline for the second slide",
-      desc: "This is the description for slide two. It shows synced content & image!",
+      date: "",
+      title: "Forging a Visionary Partnership with DAC Developers",
+      desc: "Strengthening ties with DAC Developers founder Sathish Kumar Santhanam through partnership.",
       img: "/assets/home-page/e2.webp",
     },
     {
-      date: "18 Aug 2025",
-      title: "Third content title here",
-      desc: "Here is a different description for the third slide, syncing with the image on the right.",
+      date: "",
+      title: "Empowering Futures at Anna University MBA Event",
+      desc: "Encouraging young professionals at Anna University MBA 2024 placement brochure release.",
       img: "/assets/home-page/e3.webp",
     },
     {
-      date: "24 Aug 2025",
-      title: "Third content title here",
-      desc: "Here is a different description for the third slide, syncing with the image on the right.",
+      date: "",
+      title: "Inspiring Leadership at SRM IST Vadapalani MDP Event.",
+      desc: "Sharath Ravikumar inspired future leaders at SRM IST’s Management Development Program event.",
       img: "/assets/home-page/e4.webp",
     },
   ];

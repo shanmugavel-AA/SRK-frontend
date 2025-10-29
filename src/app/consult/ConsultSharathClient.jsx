@@ -51,7 +51,7 @@ const faqs = [
 const caseStudies = [
   {
     id: 1,
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    img: "/assets/consult-sharath/CASE-STUDY-CASEGRAND.webp",
     title: "Casagrand Builders – SEO Growth Story",
     link: "case-study-casagrand-builders-seo-growth-story",
     desc: "Casagrand, one of South India’s leading real estate developers, wanted to boost organic visibility and reduce ad dependency. Through precise SEO strategies, we transformed their digital presence across multiple cities.",
@@ -80,7 +80,7 @@ const caseStudies = [
   },
   {
     id: 2,
-    img: "https://images.unsplash.com/photo-1508385082359-f59a798cd2e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    img: "/assets/consult-sharath/KAUVERY-HOSPITAL.webp",
     title: "Kauvery Hospital – SEO Transformation Story",
     desc: "Kauvery Hospital partnered with us to improve visibility for treatment-based and location-specific searches. Through strategic SEO, we strengthened their digital authority and increased qualified patient appointments across all branches.",
     link: "case-study-kauvery-hospital-seo-transformation-story",
@@ -890,6 +890,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+     
     </>
   );
 }
