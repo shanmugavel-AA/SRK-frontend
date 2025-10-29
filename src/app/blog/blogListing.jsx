@@ -35,7 +35,7 @@ export default function BlogListing() {
     if (!searchTerm.trim()) return [];
     return blogs.filter(
       (b) =>
-        b.id !== (featuredBlog.id || null) &&
+        b.id !== (featuredBlog?.id || null) &&
         b.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [searchTerm, blogs, featuredBlog]);
@@ -43,10 +43,10 @@ export default function BlogListing() {
   const categoryBlogs = useMemo(() => {
     if (searchTerm.trim()) return [];
     if (selectedCategory === "All")
-      return blogs.filter((b) => b.id !== (featuredBlog.id || null));
+      return blogs.filter((b) => b.id !== (featuredBlog?.id || null));
     return blogs.filter(
       (b) =>
-        b.id !== (featuredBlog.id || null) && b.category === selectedCategory
+        b.id !== (featuredBlog?.id || null) && b.category === selectedCategory
     );
   }, [selectedCategory, searchTerm, blogs, featuredBlog]);
 
