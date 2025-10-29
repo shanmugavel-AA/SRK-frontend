@@ -213,8 +213,14 @@ const Hero = () => {
               src="/assets/home-page/HOME PAGE LOGO BANNER copy.gif"
               title="client banner"
               alt="client banner"
-              className="w-full h-[600px] object-contain"
+              className="w-full h-[600px] object-contain md:block hidden"
             />
+            <img 
+            src="/assets/home-page/mobile-version-first.gif" 
+            alt="client banner"
+            title="client banner"
+            className="w-full h-[600px] object-contain md:hidden block"
+             />
           </div>
         </SwiperSlide>
 

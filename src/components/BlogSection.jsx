@@ -67,18 +67,22 @@ const BlogSection = () => {
           </div>
         ) : (
           recentBlogs.map((blog) => (
-            <div key={blog.id} className="relative flex justify-center">
-              <div className="absolute bottom-0 left-0 bg-white px-3 py-2 max-w-[290px] break-words">
-                <p className="text-2xl md:text-2xl font-extrabold text-gray-500">
-                  {blog.title}
-                </p>
-              </div>
-              <img
-                src={blog.imgUrl}
-                alt={blog.title}
-                className="w-full h-64 md:h-80 object-cover"
-              />
-            </div>
+            <div
+  key={blog.id}
+  className="relative w-full h-64 md:h-80 flex justify-center items-center overflow-hidden rounded-lg shadow-md"
+>
+  <img
+    src={blog.imgUrl}
+    alt={blog.title}
+    className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+  />
+  <div className="absolute bottom-0 left-0 bg-white/90 px-3 py-2 max-w-[290px]">
+    <p className="text-lg md:text-xl font-bold text-gray-700">
+      {blog.title}
+    </p>
+  </div>
+</div>
+
           ))
         )}
       </div>
