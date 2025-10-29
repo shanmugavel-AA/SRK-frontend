@@ -70,7 +70,7 @@ const BlogSection = () => {
           recentBlogs.map((blog) => (
             <div
   key={blog.id}
-  className="relative w-full h-48 overflow-hidden rounded-lg shadow-md"
+  className="relative w-full h-68 overflow-hidden rounded-lg shadow-md"
 >
   <Image
     src={blog.imgUrl}
