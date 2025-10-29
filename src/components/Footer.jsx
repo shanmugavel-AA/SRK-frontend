@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin , Instagram  } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const Footer = () => {
@@ -14,25 +14,20 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Linkedin,
-      href: "https://www.linkedin.com/in/yourprofile",
+      href: "https://www.linkedin.com/in/sharathravikumar/",
       label: "LinkedIn",
     },
     {
-      icon: Facebook,
-      href: "https://www.facebook.com/yourprofile",
-      label: "Facebook",
-    },
-    {
-      icon: Twitter,
-      href: "https://twitter.com/yourprofile",
-      label: "Twitter",
+      icon: Instagram,
+      href: "https://www.instagram.com/sharathravikumarr/",
+      label: "Instagram",
     },
   ];
 
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Consult Sharath", href: "/consult" },
+    { name: "About", href: "/social-media-expert-chennai-india" },
+    { name: "Consult Sharath", href: "/digital-marketing-consultant-chennai-india" },
     { name: "Clients", href: "/clients" },
     { name: "Blog", href: "/blogs" },
     { name: "Contact", href: "/contact" },
@@ -76,7 +71,7 @@ const Footer = () => {
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-sm hover:bg-yellow-400 hover:text-[#0B63C8] transition"
+                    className="w-10 h-10 flex items-center no-underline-effect justify-center rounded-sm hover:bg-yellow-400 hover:text-[#0B63C8] transition"
                   >
                     <Icon className="w-5 h-5" />
                   </a>

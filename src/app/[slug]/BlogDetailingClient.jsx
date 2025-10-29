@@ -435,7 +435,8 @@ export default function BlogDetail() {
                   <img
                     key={idx}
                     src={c.src}
-                    alt="blog-content"
+                    title={blogDetail.title}
+                    alt={blogDetail.title}
                     className="max-w-3xl h-[400px] object-cover mx-12"
                   />
                 );

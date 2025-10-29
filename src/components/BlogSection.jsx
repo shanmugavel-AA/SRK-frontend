@@ -10,7 +10,7 @@ const BlogSection = () => {
   const router = useRouter();
 
   const handleBlogs = () => {
-    router.push("/blogs");
+    router.push("/blog");
   };
 
   useEffect(() => {

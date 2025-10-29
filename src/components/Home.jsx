@@ -50,7 +50,7 @@ const Hero = () => {
   };
 
   const handleExplore = () => {
-    router.push("/about-us");
+    router.push("/social-media-expert-chennai-india");
   };
 
   // When the section enters view, start animations
@@ -391,21 +391,21 @@ const Hero = () => {
           {/* Social icons row */}
           <div className="flex space-x-5 mb-10">
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/sharathravikumar/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition"
             >
               <FaLinkedinIn size={18} />
             </a>
-            <a
+            {/* <a
               href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center transition"
             >
               <FaTwitter size={18} />
-            </a>
+            </a> */}
           </div>
 
           {/* Info grid */}

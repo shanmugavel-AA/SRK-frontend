@@ -2,15 +2,19 @@
 import Link from "next/link";
 import DateWithIcon from "./DateWithIcon";
 import slugify from "../utils/slugify";
+import Image from "next/image";
 
 export default function BlogCard({ blog }) {
   return (
     <div className="overflow-hidden hover:shadow-lg transition duration-300 flex flex-col">
       {/* Top Half: Image with Category Tag */}
-      <div className="relative h-48 overflow-hidden">
-        <img
+      <div className="relative w-full h-48 overflow-hidden">
+        <Image
           src={blog.imgUrl} // backend field
           alt={blog.title}
+          title={blog.title}
+          fill
+          loading="lazy"
           className="w-full h-full object-cover transform transition duration-300 ease-in-out hover:scale-105"
         />
         {/* Category Tag */}

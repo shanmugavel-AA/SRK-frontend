@@ -84,8 +84,8 @@ const Header = () => {
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <Link
-              href="/about-us"
-              className={`${isActive("/about-us") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}
+              href="/social-media-expert-chennai-india"
+              className={`${isActive("/social-media-expert-chennai-india") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}
             >
               About
             </Link>
@@ -101,12 +101,12 @@ const Header = () => {
                 >
                   <motion.ul className="flex flex-col text-sm p-2 space-y-2 text-gray-900">
                     <motion.li variants={itemVariants} whileHover="hover" className="cursor-pointer p-2 rounded">
-                      <Link href="/about-us" className={`${isActive("/about-us") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}>
+                      <Link href="/social-media-expert-chennai-india" className={`${isActive("/social-media-expert-chennai-india") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}>
                         Who I Am
                       </Link>
                     </motion.li>
                     <motion.li variants={itemVariants} whileHover="hover" className="cursor-pointer p-2 rounded">
-                      <Link href="/clients" className={`${isActive("/clients","/about-us") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}>
+                      <Link href="/clients" className={`${isActive("/clients","/social-media-expert-chennai-india") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600"}`}>
                         Clients
                       </Link>
                     </motion.li>
@@ -117,8 +117,8 @@ const Header = () => {
           </div>
 
           <Link
-            href="/consult"
-            className={`${isActive("/consult") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600 mr-8"}`}
+            href="/digital-marketing-consultant-chennai-india"
+            className={`${isActive("/digital-marketing-consultant-chennai-india") ? "text-blue-600 font-bold" : "text-black hover:text-blue-600 mr-8"}`}
           >
             Consult Sharath
           </Link>
@@ -243,7 +243,7 @@ const Header = () => {
                       className="pl-4 mt-2 flex flex-col space-y-2 text-sm"
                     >
                       <li>
-                        <Link href="/about-us" onClick={() => setMobileMenuOpen(false)} className="block hover:text-yellow-600">
+                        <Link href="/social-media-expert-chennai-india" onClick={() => setMobileMenuOpen(false)} className="block hover:text-yellow-600">
                           Who I Am
                         </Link>
                       </li>
@@ -302,7 +302,7 @@ const Header = () => {
               </li>
 
               <li>
-                <Link href="/consult" onClick={() => setMobileMenuOpen(false)} className="block text-blue-600 hover:text-yellow-600">
+                <Link href="/digital-marketing-consultant-chennai-india" onClick={() => setMobileMenuOpen(false)} className="block text-blue-600 hover:text-yellow-600">
                   Consult Sharath
                 </Link>
               </li>
