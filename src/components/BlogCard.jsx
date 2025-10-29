@@ -25,9 +25,6 @@ export default function BlogCard({ blog }) {
 
       {/* Bottom Half: Content */}
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold mb-2 pl-3 border-l-4 h-12 mb-4 border-blue-800 flex-grow">
-          {blog.title}
-        </h3>
         <p className="text-gray-600 text-sm mb-3 flex-grow">{blog.description}</p>
         <div className="flex items-center justify-between mt-auto">
           <DateWithIcon date={blog.date} />
