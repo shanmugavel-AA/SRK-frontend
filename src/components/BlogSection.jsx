@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Image from "next/image";
 
 const BlogSection = () => {
   const [recentBlogs, setRecentBlogs] = useState([]);
