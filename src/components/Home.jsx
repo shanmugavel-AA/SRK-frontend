@@ -153,7 +153,7 @@ const Hero = () => {
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
         fadeEffect={{ crossFade: true }}
-        autoplay={{ delay: 10000, disableOnInteraction: false }}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop={true}
         className="w-full h-[600px] md:h-[750px] relative"
@@ -210,7 +210,7 @@ const Hero = () => {
         <SwiperSlide>
           <div className="flex justify-center items-center h-full mt-10">
             <img
-              src="/assets/home-page/HOME PAGE LOGO BANNER copy.webp"
+              src="/assets/home-page/HOME PAGE LOGO BANNER copy.gif"
               title="client banner"
               alt="client banner"
               className="w-full h-[600px] object-contain"
@@ -225,7 +225,7 @@ const Hero = () => {
               {/* Left content (was right content) */}
               <div className="md:w-1/2 text-gray-900 order-last md:order-first z-20">
                 <div className="inline-block">
-                  <h2 className="text-4xl md:text-6xl font-bold text-start">
+                  <h2 className="text-2xl md:text-6xl font-bold text-start md:mt-0 mt-20">
                     From <span className="text-yellow-400">Vision</span> to Lasting Legacies
                   </h2>
                 </div>
