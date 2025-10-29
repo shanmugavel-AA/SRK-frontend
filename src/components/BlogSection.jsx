@@ -92,9 +92,6 @@ const BlogSection = () => {
 
               {/* Content section same style */}
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="text-lg font-bold mb-2 pl-3 border-l-4 border-blue-800 h-12">
-                  {blog.title}
-                </h3>
                 <p className="text-gray-600 text-sm mb-3 flex-grow">
                   {blog.description}
                 </p>
