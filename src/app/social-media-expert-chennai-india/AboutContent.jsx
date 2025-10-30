@@ -83,19 +83,29 @@ const cardData = [
 
 const faqs = [
   {
-    question: "What services do you offer?",
+    question: "What is the Way To Be a Social Media Expert?",
     answer:
-      "I offer a range of frontend development services including React, Tailwind CSS, animation integration, and responsive design.",
+      "Become a hands-on expert through operating various platforms, monitoring audience behaviour, keeping pace with the trends, and learning to use such tools as Meta Business Suite, Google Analytics, and Ads Manager.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "How Do I Measure ROI in Social Media?",
     answer:
-      "Project timelines vary, but most projects are completed within 4 to 8 weeks depending on scope and complexity.",
+      "Track like, shares, comments, conversions, web traffic and leads. Measure ROI with the help of analytics tools like Google analytics or platform insights.",
   },
   {
-    question: "Do you provide post-launch support?",
+    question: "Why Should I Hire a Social Media Expert in Chennai?",
     answer:
-      "Yes, ongoing support and maintenance packages are available to ensure your digital assets perform optimally.",
+      "Recruiting a local professional will assist in aiming the appropriate regional audience and knowing local trends, speaking both English and Tamil, and establishing effective relationships with the customers of the city.",
+  },
+  {
+    question: "How Long Does it Take to See Results from Social Media Marketing?",
+    answer:
+      "There are results based on strategy and consistency. Targets to be achieved within 1-2 months are engagement and awareness, and a stronger lead in 3-6 months.",
+  },
+  {
+    question: "How Can Sharath Ravi Kumar Help My Business Grow Online?",
+    answer:
+      "The Sharath Ravi Kumar and his team create data-driven social media plans that create brand awareness, leads, and engagement with the most measurable success in India.",
   },
 ];
 
@@ -557,7 +567,7 @@ const AboutHero = () => {
             {faqs.map((faq, index) => (
               <div key={index} className="py-4">
                 <button
-                  className="w-full flex justify-between items-center font-semibold text-lg text-foreground dark:text-gray-800 hover:text-blue-800 transition-colors focus:outline-none"
+                  className="w-full flex justify-between items-start text-left gap-4 font-semibold text-lg text-foreground dark:text-gray-800 hover:text-blue-800 transition-colors focus:outline-none"
                   onClick={() => toggleAnswer(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}

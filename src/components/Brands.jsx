@@ -72,7 +72,7 @@ const OurBrands = () => {
           />
         </motion.div>
         </Link>
-        <Link href="/assets/home-page/BMW.png" className="no-underline-effect" target="_blank" passHref>
+        <Link href="https://www.brandandmediaworks.com/" className="no-underline-effect" target="_blank" passHref>
         <motion.div
           custom={3}
           initial="hidden"

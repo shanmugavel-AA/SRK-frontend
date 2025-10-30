@@ -4,7 +4,7 @@
 import { useState } from "react";
 
 export default function FAQ({ faqs }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <div className="mt-10 p-6 rounded-lg shadow-lg bg-white">

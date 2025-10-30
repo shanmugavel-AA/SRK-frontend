@@ -20,6 +20,7 @@ export default function FormPopup() {
     formType: "PopUp Form",
     additionalData: {
       service: "",
+      otherService: "",
       message: "",
       source: "",
       captcha: captchaValue,
@@ -34,9 +35,23 @@ export default function FormPopup() {
     }
     setLoading(true);
     try {
+      
+    const payload = {
+      ...FormData,
+      additionalData: {
+        ...FormData.additionalData,
+        service:
+          FormData.additionalData.service === "others"
+            ? FormData.additionalData.otherService
+            : FormData.additionalData.service,
+        captcha: captchaValue,
+      },
+    };
+  
+
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/api/forms/submit`,
-        FormData
+        payload
       );
 
       if (response.status === 200) {
@@ -46,9 +61,10 @@ export default function FormPopup() {
           name: "",
           email: "",
           phone: "",
-          formType: "Contact Form",
+          formType: "Popup Form",
           additionalData: {
             service: "",
+            otherService: "",
             message: "",
             source: "",
           },
@@ -73,7 +89,7 @@ export default function FormPopup() {
     setShowForm(false); // reset
     const timer = setTimeout(() => {
       setShowForm(true);
-    }, 6000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -198,13 +214,39 @@ export default function FormPopup() {
                     }
                   >
                     <option value="" disabled>
-                      -- Select Service --
+                      -- Select Purpose --
                     </option>
-                    <option value="web">Web Development</option>
-                    <option value="seo">SEO Optimization</option>
-                    <option value="design">UI/UX Design</option>
-                    <option value="marketing">Digital Marketing</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="chief guest">Chief Guest</option>
+                    <option value="jury">Jury</option>
+                    <option value="speaker">Speaker</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="guest professor">Guest Professor</option>
+                    <option value="one on one discussion">
+                      One on One Discussion
+                    </option>
+                    <option value="career guidance individual">
+                      Career Guidance Individual
+                    </option>
+                    <option value="others">Others</option>
                   </select>
+                  {FormData.additionalData.service === "others" && (
+                    <input
+                      type="text"
+                      placeholder="Please specify your purpose"
+                      className="border rounded-lg p-3 w-full mt-3"
+                      value={FormData.additionalData.otherService}
+                      onChange={(e) =>
+                        setFormData({
+                          ...FormData,
+                          additionalData: {
+                            ...FormData.additionalData,
+                            otherService: e.target.value,
+                          },
+                        })
+                      }
+                    />
+                  )}
                 </div>
 
                 {/* Row 4 */}

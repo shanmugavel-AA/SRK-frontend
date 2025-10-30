@@ -28,6 +28,7 @@ const Contact = () => {
     email: "",
     phone: "",
     service: "",
+    otherService: "",
     message: "",
     medium: "",
   });
@@ -36,6 +37,20 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleReach = () => {
+    const contactSection = document.getElementById("form");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleReachForm = () => {
+    const contactSection = document.getElementById("meeting");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -55,7 +70,10 @@ const Contact = () => {
         email: formData.email,
         phone: formData.phone,
         additionalData: {
-          service: formData.service,
+          service:
+            formData.service === "others"
+            ? formData.otherService
+            : formData.service,
           message: formData.message,
           medium: formData.medium,
           captcha: captchaValue,
@@ -63,7 +81,7 @@ const Contact = () => {
       };
 
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/forms/submit`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/forms/submit`,
         payload
       ); // backend endpoint
 
@@ -99,19 +117,19 @@ const Contact = () => {
               <div className="flex items-center justify-center md:justify-start space-x-3">
                 <PhoneCall className="w-6 h-6 text-blue-300" />
                 <a
-                  href="tel:+911234567890"
+                  href="tel:+917200701455"
                   className="text-white text-lg font-medium hover:underline"
                 >
-                  +91 12345 67890
+                  +91 7200701455
                 </a>
               </div>
               <div className="flex items-center justify-center md:justify-start space-x-3">
                 <PhoneCall className="w-6 h-6 text-blue-300" />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919944779814"
                   className="text-white text-lg font-medium hover:underline"
                 >
-                  +91 98765 43210
+                  +91 9944779814
                 </a>
               </div>
             </div>
@@ -183,7 +201,10 @@ const Contact = () => {
                 Have questions? We are here to answer all your queries and help
                 you get started.
               </p>
-              <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
+              <button
+                onClick={handleReachForm}
+                className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg cursor-pointer"
+              >
                 Reach us
               </button>
             </motion.div>
@@ -201,8 +222,13 @@ const Contact = () => {
                   Our team is ready to provide guidance and support for all your
                   projects.
                 </p>
-                <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
-                  Reach us
+                <button className="text-gray-700 font-medium justify-center p-3 mt-auto bg rounded-lg">
+                  <a
+                    href="tel:+919944779814"
+                    className="text-white text-lg font-medium no-underline-effect"
+                  >
+                    +91 9944779814
+                  </a>
                 </button>
               </motion.div>
 
@@ -213,15 +239,21 @@ const Contact = () => {
                 <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-1">
                   Schedule a Meeting
                 </h3>
-                <button className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg">
-                  Reach us
+                <button
+                  onClick={handleReach}
+                  className="text-gray-700 font-medium justify-center p-4 mt-auto bg rounded-lg cursor-pointer"
+                >
+                  Meet
                 </button>
               </motion.div>
             </div>
           </div>
         </section>
 
-        <section className="relative min-h-screen flex items-center justify-center bg-gray-50 overflow-hidden px-6 py-12">
+        <section
+          id="form"
+          className="relative min-h-screen flex items-center justify-center bg-gray-50 overflow-hidden px-6 py-12"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
             {/* Left Form - Contact Form */}
             <div className="bg-white rounded-2xl shadow-2xl p-8">
@@ -235,7 +267,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="fullName"
+                    name="name"
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="Full Name"
@@ -285,13 +317,40 @@ const Contact = () => {
                     className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500 outline-none"
                     required
                   >
-                    <option value="">Select Service</option>
-                    <option value="web">Web Development</option>
-                    <option value="app">App Development</option>
-                    <option value="seo">SEO Optimization</option>
-                    <option value="design">UI/UX Design</option>
+                    <option value="" disabled>
+                      -- Select Purpose --
+                    </option>
+                    <option value="consultation">Consultation</option>
+                    <option value="chief guest">Chief Guest</option>
+                    <option value="jury">Jury</option>
+                    <option value="speaker">Speaker</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="guest professor">Guest Professor</option>
+                    <option value="one on one discussion">
+                      One on One Discussion
+                    </option>
+                    <option value="career guidance individual">
+                      Career Guidance Individual
+                    </option>
+                    <option value="others">Others</option>
                   </select>
                 </div>
+
+                {formData.service === "others" && (
+                  <div className="flex flex-col mt-3">
+                    <label className="font-medium text-gray-700">
+                      Please Specify
+                    </label>
+                    <input
+                      type="text"
+                      name="otherService"
+                      value={formData.otherService || ""}
+                      onChange={handleChange}
+                      placeholder="Enter your purpose"
+                      className="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-blue-500 outline-none"
+                    />
+                  </div>
+                )}
 
                 <div className="flex flex-col">
                   <label className="font-medium text-gray-700">
@@ -340,12 +399,15 @@ const Contact = () => {
             </div>
 
             {/* Right Form - Invitation Form */}
-            <div className="bg-white rounded-2xl shadow-2xl p-8">
+            <section
+              id="meeting"
+              className="bg-white rounded-2xl shadow-2xl p-8"
+            >
               <h2 className="text-2xl font-bold text-blue-700 mb-6">
                 Schedule an Event
               </h2>
               <CalendlyEmbed />
-            </div>
+            </section>
           </div>
         </section>
       </div>

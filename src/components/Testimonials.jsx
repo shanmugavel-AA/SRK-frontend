@@ -10,33 +10,28 @@ import { Autoplay } from "swiper/modules";
 const testimonials = [
   {
     id: 1,
-    img: "https://th.bing.com/th/id/OIP.Jc1B7NcBP0vNsm3cEKrYmgHaFh?w=262&h=196&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-    youtube: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    img: "/assets/consult-sharath/testimonials/ankit.webp",
+    youtube: "https://www.youtube.com/embed/7AwF7P2gOKU",
   },
   {
     id: 2,
-    img: "https://th.bing.com/th/id/OIP.uuF3wPgc6yQnjJgcztygSgHaE6?w=296&h=196&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
-    youtube: "https://www.youtube.com/embed/3GwjfUFyY6M",
+    img: "/assets/consult-sharath/testimonials/Arpitsinghal.webp",
+    youtube: "https://www.youtube.com/embed/a8auY3N0pUE",
   },
   {
     id: 3,
-    img: "https://thumbs.dreamstime.com/b/side-view-smart-indian-crypto-trader-investor-analyst-broker-using-laptop-smartphone-analyzing-digital-side-view-smart-272154411.jpg",
-    youtube: "https://www.youtube.com/embed/tVj0ZTS4WF4",
+    img: "/assets/consult-sharath/testimonials/Sidharath.webp",
+    youtube: "https://www.youtube.com/embed/CtNwUZ3iVUQ",
   },
   {
     id: 4,
-    img: "https://tse1.mm.bing.net/th/id/OIP.dhl6GgCTFoxtmxHDDwAu4wHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-    youtube: "https://www.youtube.com/embed/L_jWHffIx5E",
+    img: "/assets/consult-sharath/testimonials/vimesh.webp",
+    youtube: "https://www.youtube.com/embed/For6pBwGL8E",
   },
   {
     id: 5,
-    img: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?cs=srgb&dl=pexels-fauxels-3183150.jpg&fm=jpg",
-    youtube: "https://www.youtube.com/embed/oHg5SJYRHA0",
-  },
-  {
-    id: 6,
-    img: "https://img.freepik.com/premium-photo/laptop-messy-desk_53876-161295.jpg?w=360",
-    youtube: "https://www.youtube.com/embed/eY52Zsg-KVI",
+    img: "/assets/consult-sharath/testimonials/Yasoda.webp",
+    youtube: "https://www.youtube.com/embed/0RRDWG-lLLo",
   },
 ];
 
@@ -128,7 +123,7 @@ export default function TestimonialCarousel() {
 
               {/* Hover Overlay */}
               <div
-                className="absolute inset-0 bg-black/40 flex items-center justify-center 
+                className="absolute inset-0 bg-black/20 flex items-center justify-center 
              opacity-100 transition-opacity duration-300"
                 onClick={() => openVideo(t)}
               >
