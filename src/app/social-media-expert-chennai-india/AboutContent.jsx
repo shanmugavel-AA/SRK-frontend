@@ -507,7 +507,7 @@ const AboutHero = () => {
               <img
                 src={active.avatar}
                 alt={active.name}
-                className="w-52 h-60 object-cover"
+                className="w-52 h-60 object-cover md:-mt-10"
               />
               {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" /> */}
               {/* <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white text-sm px-4 py-1">
@@ -530,7 +530,7 @@ const AboutHero = () => {
                 <blockquote className="text-lg italic leading-relaxed text-foreground mb-4">
                   {active.quote}
                 </blockquote>
-                <div className="font-semibold text-secondary">
+                <div className="font-semibold text-black">
                   ★ {active.title}
                 </div>
               </div>

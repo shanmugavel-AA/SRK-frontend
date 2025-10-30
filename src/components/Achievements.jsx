@@ -103,10 +103,10 @@ export default function Achievements() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12">
       <div className="max-w-7xl mx-auto text-center mb-8">
-        <h3 className="text-3xl font-bold mb-4">Proven Results</h3>
+        <h3 className="text-3xl font-bold mb-4">Our Recognitions</h3>
         <span className="block h-[3px] bg-yellow-400 w-40 mx-auto animate-shrinkExpand"></span>
         <p className="text-gray-700 font-medium mt-2 mb-8">
-        Driving consistent growth, top rankings, and high-performing campaigns through a data-driven approach.
+        Honoured by industry leaders for outstanding digital excellence and innovation.
         </p>
       </div>
 

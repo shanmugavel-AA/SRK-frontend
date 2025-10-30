@@ -32,19 +32,29 @@ import { MdLightbulbOutline, MdRocketLaunch } from "react-icons/md";
 
 const faqs = [
   {
-    question: "What services do you offer?",
+    question: "Who is Sharath Ravi Kumar And What Does He Do?",
     answer:
-      "I offer a range of frontend development services including React, Tailwind CSS, animation integration, and responsive design.",
+      "Sharath Ravi Kumar is a famous digital entrepreneur, author and strategist who has launched 4 successful brands, Webboombaa, Brand and Media Works, Great Indian Sweets and Great Indian Beverages with the aim of transforming the brands by using digital innovation and strategic marketing.",
   },
   {
-    question: "How long does a typical project take?",
+    question: " How Do These Brands Work Together to Drive Business Success?",
     answer:
-      "Project timelines vary, but most projects are completed within 4 to 8 weeks depending on scope and complexity.",
+      "The brands are complementary one to another as they implement a combination of strategy, creativity, and technology to provide end-to-end marketing, branding, and digital transformation services to various industries.",
   },
   {
-    question: "Do you provide post-launch support?",
+    question: "How is Sharath Ravi Kumar Different From Other Digital Experts in India?",
     answer:
-      "Yes, ongoing support and maintenance packages are available to ensure your digital assets perform optimally.",
+      "Sharath, unlike others, integrates his strategic thinking, coaching experience, and multi brand experience to provide an all encompassing development, brand positioning to performance-driven digital marketing.",
+  },
+  {
+    question: "How Does Sharath Ravi Kumar Contribute as An Author, Speaker, And Mentor?",
+    answer:
+      "Sharath as a digital coach, guest professor, and author helps young marketers and business owners scale effectively by providing information about his industry through books, workshops, and sessions.",
+  },
+  {
+    question: "How Has SRK Contributed to Digital Transformation in India?",
+    answer:
+      "Under Sharath’s leadership, SRK has guided multiple brands to achieve higher visibility, brand authority, and ROI through personalized strategies and scalable digital solutions.",
   },
 ];
 
@@ -820,7 +830,7 @@ export default function HeroSection() {
             {faqs.map((faq, index) => (
               <div key={index} className="py-4">
                 <button
-                  className="w-full flex justify-between items-center font-semibold text-lg text-foreground dark:text-gray-800 hover:text-blue-800 transition-colors focus:outline-none"
+                  className="w-full flex justify-between items-start text-left gap-4 font-semibold text-lg text-foreground dark:text-gray-800 hover:text-blue-800 transition-colors focus:outline-none"
                   onClick={() => toggleAnswer(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}

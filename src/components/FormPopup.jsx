@@ -35,19 +35,24 @@ export default function FormPopup() {
     }
     setLoading(true);
     try {
-      
-    const payload = {
-      ...FormData,
-      additionalData: {
+      let additionalData = {
         ...FormData.additionalData,
         service:
           FormData.additionalData.service === "others"
             ? FormData.additionalData.otherService
             : FormData.additionalData.service,
         captcha: captchaValue,
-      },
-    };
-  
+      };
+
+      // If "others" is selected, remove the otherService field from payload
+      if (FormData.additionalData.service === "others") {
+        delete additionalData.otherService;
+      }
+
+      const payload = {
+        ...FormData,
+        additionalData,
+      };
 
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/api/forms/submit`,

@@ -630,11 +630,11 @@ const Hero = () => {
 
         {/* Right column: title and info */}
         <div className="flex-1 flex flex-col justify-center h-full pr-16 z-10 absolute left-2 md:left-100">
-          <h3 className="text-white text-2xl md:text-4xl font-extrabold mb-3">
+          <h3 className="text-white text-xl md:text-4xl font-extrabold mb-3">
             Kickstart Your Digital Journey
           </h3>
-          <div className="text-white text-sm md:text-lg mb-2">
-            Begin today and let Sharath Ravikumar strategise your digital growth.
+          <div className="text-white w-40 md:w-full text-sm md:text-lg mb-2">
+          Start today and grow digitally with Sharath Ravikumar.
           </div>
           <button
             onClick={handleRegister}
