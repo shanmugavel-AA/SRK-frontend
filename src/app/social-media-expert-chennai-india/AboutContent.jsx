@@ -224,7 +224,7 @@ const AboutHero = () => {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 bg-black opacity-0"></div>
 
           {/* Content */}
           <div className="relative z-10 flex items-center justify-end md:mr-40 h-full px-8">

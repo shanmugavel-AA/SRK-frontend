@@ -197,7 +197,7 @@ const Hero = () => {
               {/* Right image (was left image) */}
               <div className="md:w-1/2 mt-10 md:mt-0 relative hidden md:block">
                 <img
-                  src="https://sharathravikumar.com/wp-content/uploads/2024/12/sharath.png"
+                  src="/assets/home-page/sharath.PNG"
                   alt="Hero"
                   className="max-w-2xl h-[600px] absolute z-20 -top-58 right-0"
                 />
@@ -661,7 +661,7 @@ const Hero = () => {
 
         {/* Image overlapping the section */}
         <img
-          src="https://sharathravikumar.com/wp-content/uploads/2024/12/sharath.png"
+          src="/assets/home-page/srkcta.webp"
           alt=""
           className="absolute -right-30 md:right-50 -translate-x-1/2 bottom-0 h-64 object-contain z-20"
           draggable="false"

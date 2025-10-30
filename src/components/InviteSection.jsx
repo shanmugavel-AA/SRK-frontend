@@ -90,7 +90,7 @@ export default function InviteSection() {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="https://sharathravikumar.com/wp-content/uploads/2024/12/sharath.png"
+            src="/assets/home-page/srkinvite.webp"
             alt="Guest Speaker"
             className="w-full max-w-sm"
           />
