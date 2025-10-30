@@ -5,11 +5,15 @@ import { ArrowLeftIcon, HomeIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 
 const clients = [
-  "/assets/About-page/casa-grand.webp",
-  "/assets/About-page/chennai-silk.webp",
-  "/assets/About-page/copper-kitchen.webp",
-  "/assets/About-page/phoinix.webp",
-  "/assets/About-page/pvr.webp",
+  "/assets/About-page/auto/Mercedez.webp",
+  "/assets/About-page/ecommerce/Chennai Silks.webp",
+  "/assets/About-page/food/Palmshore.webp",
+  "/assets/About-page/real estate/VGN Homes.webp",
+  "/assets/About-page/health care/kauvery_.webp",
+  "/assets/About-page/mall webp/Palladium logo.webp",
+  "/assets/About-page/real estate/hiranandani_.webp",
+  "/assets/About-page/mall webp/Phoenix Marketcity logo300 resolution.webp",
+  "/assets/About-page/auto/Volkwagen.webp"
 ];
 
 function ThankYouPage() {
