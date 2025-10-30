@@ -138,7 +138,7 @@ const Contact = () => {
           {/* Right Column: Full Image */}
           <div className="w-full md:w-1/2 relative h-[400px] md:h-auto">
             <img
-              src="/assets/about-us-hero.jpg"
+              src="/assets/contactus.webp"
               alt="Banner Image"
               className="object-cover object-contain w-full h-full"
             />
@@ -344,6 +344,7 @@ const Contact = () => {
                     <input
                       type="text"
                       name="otherService"
+                      required
                       value={formData.otherService || ""}
                       onChange={handleChange}
                       placeholder="Enter your purpose"

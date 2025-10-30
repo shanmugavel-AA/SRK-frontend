@@ -235,6 +235,7 @@ export default function FormPopup() {
                       type="text"
                       placeholder="Please specify your purpose"
                       className="border rounded-lg p-3 w-full mt-3"
+                      required
                       value={FormData.additionalData.otherService}
                       onChange={(e) =>
                         setFormData({
