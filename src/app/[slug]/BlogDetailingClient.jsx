@@ -31,13 +31,12 @@ export default function BlogDetail() {
     router.push("/contact");
   };
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const siteUrl =
-        process.env.NEXT_PUBLIC_SITE_URL || "https://sharathravikumar.com";
-      const path = window.location.pathname;
-      setCurrentUrl(`${path}`);
-    }
-  }, []);
+  if (typeof window !== "undefined") {
+    const fullUrl = window.location.origin + window.location.pathname;
+    setCurrentUrl(fullUrl);
+  }
+}, []);
+
 
   // Fetch blog from backend
   useEffect(() => {
