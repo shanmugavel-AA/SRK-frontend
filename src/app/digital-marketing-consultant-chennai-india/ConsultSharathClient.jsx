@@ -898,7 +898,7 @@ export default function HeroSection() {
                     className="cursor-pointer flex items-center justify-center px-6 py-3 text-lg font-semibold rounded border border-white/30 bg-white/10 text-white hover:bg-white/20 min-w-[200px] transition-colors duration-300"
                   >
                     <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
-                    Schedule a Call
+                    Call Us
                   </button>
                 </div>
               </div>

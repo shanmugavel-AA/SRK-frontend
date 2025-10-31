@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -36,7 +36,6 @@ import Brands from "../components/Brands";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-
   const overlayRef = useRef(null);
   const [regHovered, setRegHovered] = useState(false);
 
@@ -44,7 +43,6 @@ const Hero = () => {
   const isInView = useInView(sectionRef, { once: true }); // Trigger once
   const imageControls = useAnimation();
   const textControls = useAnimation();
-
 
   // When the section enters view, start animations
   if (isInView) {
@@ -94,8 +92,7 @@ const Hero = () => {
   const slides = [
     {
       date: "",
-      title:
-        "When Legacy Meets Digital-First Innovation",
+      title: "When Legacy Meets Digital-First Innovation",
       desc: "A powerful meeting with TVS Lucas leadership to redefine marketing through innovation, strategy, and transformation.",
       img: "/assets/home-page/Event-SRK.webp",
     },
@@ -140,7 +137,6 @@ const Hero = () => {
 
   return (
     <div className="relative">
-
       {/* Hero Section */}
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
@@ -173,12 +169,21 @@ const Hero = () => {
                   decade of experience. As a top Indian digital marketing
                   expert, he inspires growth, creativity and brand success.
                 </p>
-                <Link href="/social-media-expert-chennai-india" className="no-underline-effect bg text-black font-semibold px-6 py-3 md:mb-0 mb-2 rounded-lg">
-                  Explore My Work
-                </Link>
-                <Link href="/contact" className="no-underline-effect bg-yellow-400 mr-4 md:ml-2 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg">
-                  Book an Appointment
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center sm:justify-start gap-3 mt-4">
+                  <Link
+                    href="/social-media-expert-chennai-india"
+                    className="no-underline-effect bg text-black font-semibold px-6 py-3 rounded-lg w-full sm:w-auto text-center"
+                  >
+                    Explore My Work
+                  </Link>
+
+                  <Link
+                    href="/contact"
+                    className="no-underline-effect bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg w-full sm:w-auto text-center"
+                  >
+                    Book an Appointment
+                  </Link>
+                </div>
               </div>
 
               {/* Right image (was left image) */}
@@ -202,12 +207,12 @@ const Hero = () => {
               alt="client banner"
               className="w-full h-[600px] object-contain md:block hidden"
             />
-            <img 
-            src="/assets/home-page/mobile-version-first.gif" 
-            alt="client banner"
-            title="client banner"
-            className="w-full h-[600px] object-contain md:hidden block"
-             />
+            <img
+              src="/assets/home-page/mobile-version-first.gif"
+              alt="client banner"
+              title="client banner"
+              className="w-full h-[600px] object-contain md:hidden block"
+            />
           </div>
         </SwiperSlide>
 
@@ -219,7 +224,8 @@ const Hero = () => {
               <div className="md:w-1/2 text-gray-900 order-last md:order-first z-20">
                 <div className="inline-block">
                   <h2 className="text-2xl md:text-6xl font-bold text-start md:mt-0 mt-20">
-                    From <span className="text-yellow-400">Vision</span> to Lasting Legacies
+                    From <span className="text-yellow-400">Vision</span> to
+                    Lasting Legacies
                   </h2>
                 </div>
                 <p className="text-lg mb-6 mt-10">
@@ -228,12 +234,21 @@ const Hero = () => {
                   With Gautam Vasudevan Menon as the face of the brand, this
                   collaboration blends creativity and credibility together.
                 </p>
-                <Link href="/social-media-expert-chennai-india" className="no-underline-effect bg text-black font-semibold px-6 py-3 md:mb-0 mb-2 rounded-lg">
-                  Explore My Work
-                </Link>
-                <Link href="/contact" className="no-underline-effect bg-yellow-400 mr-4 md:ml-2 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg">
-                  Book an Appointment
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center sm:justify-start gap-3 mt-4">
+                  <Link
+                    href="/social-media-expert-chennai-india"
+                    className="no-underline-effect bg text-black font-semibold px-6 py-3 rounded-lg w-full sm:w-auto text-center"
+                  >
+                    Explore My Work
+                  </Link>
+
+                  <Link
+                    href="/contact"
+                    className="no-underline-effect bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg w-full sm:w-auto text-center"
+                  >
+                    Book an Appointment
+                  </Link>
+                </div>
               </div>
 
               {/* Right image (was left image) */}
@@ -283,7 +298,7 @@ const Hero = () => {
             <h3 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight max-w-md text-left w-full">
               Business Wins
             </h3>
-          
+
             <p className="text-sm md:text-lg text-gray-600 mb-2 max-w-sm text-left">
               With more than a decade of proven impact, Sharath Ravikumar has
               empowered businesses and brands to grow, thrive and unlock their
@@ -345,7 +360,6 @@ const Hero = () => {
           {/* Heading + button */}
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold">About Sharath</h2>
-            
 
             <Link
               href="/social-media-expert-chennai-india"
@@ -371,7 +385,6 @@ const Hero = () => {
               </span>
             </Link>
           </div>
-          
 
           {/* Description */}
           <p className="text-gray-500 mb-8 text-lg leading-relaxed">
@@ -589,7 +602,7 @@ const Hero = () => {
         </div>
       </section>
 
-              {/* CTA */}
+      {/* CTA */}
       <section className="w-full bg-white py-12 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto">
         {/* Left side content */}
         <div className="mb-6 md:mb-0 md:flex-1">
@@ -625,11 +638,11 @@ const Hero = () => {
 
         {/* Right column: title and info */}
         <div className="flex-1 flex flex-col justify-center h-full pr-16 z-10 absolute left-2 md:left-100">
-          <h3 className="text-white text-xl md:text-4xl font-extrabold mb-3">
+          <h3 className="text-white w-40 md:w-full text-xl md:text-4xl font-extrabold mb-3">
             Kickstart Your Digital Journey
           </h3>
           <div className="text-white w-40 md:w-full text-sm md:text-lg mb-2">
-          Start today and grow digitally with Sharath Ravikumar.
+            Start today and grow digitally with Sharath Ravikumar.
           </div>
           <Link
             href="/contact"

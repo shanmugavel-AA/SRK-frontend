@@ -22,7 +22,9 @@ export default function BlogListing() {
           ...b,
           imgUrl: b.imgUrl || b.bannerUrl || "",
           description: b.description || "",
-        }));
+        }))
+        .sort((a,b) => new Date(b.date) - new Date(a.date));
+
         setBlogs(fetchedBlogs);
       })
       .catch((err) => console.error(err));

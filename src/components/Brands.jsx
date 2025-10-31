@@ -15,7 +15,7 @@ const cardVariants = {
 
 const OurBrands = () => {
   return (
-    <section className="max-w-6xl mx-auto py-12 px-6">
+    <section className="max-w-6xl mx-auto py-0 md:py-6 px-6">
       <h2 className="text-3xl font-bold text-center">Our Brands</h2>
       <span className="block h-[2px] bg-yellow-400 w-6 mx-auto animate-shrinkExpand"></span>
       <div className="text-gray-600 font-medium mx-auto text-center mt-2 mb-8">Crafting experiences through a portfolio of brands that inspire, engage and deliver meaningful results.</div>

@@ -177,6 +177,11 @@ const AboutHero = () => {
 
   const [openIndex, setOpenIndex] = useState(0); // First question answer open initially
   const refs = useRef([]);
+  const [flipped, setFlipped] = useState(null);
+
+  const handleFlip = (index) => {
+    setFlipped(flipped === index ? null : index);
+  };
 
   const toggleAnswer = (index) => {
     setOpenIndex((prev) => (prev === index ? -1 : index));
@@ -301,26 +306,31 @@ const AboutHero = () => {
       </section>
 
       <section className="w-full py-10">
-        <div className="max-w-5xl mx-auto px-20">
-          <div className="flex flex-col md:flex-row items-center md:justify-center gap-y-2 md:gap-x-10">
-            {steps.map((step,id) => (
-              <div key={id} className="bg-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center w-32 h-32 text-black text-center">
-                {/* Icon at top */}
-                <div className="w-8 h-8 mb-1">{step.icon}</div>
-                {/* Number in center */}
-                <div className="text-3xl font-bold text-black">
-                  {step.number}
-                </div>
-                {/* Title at bottom */}
-                <div className="text-base mt-1">{step.title}</div>
-              </div>
-            ))}
-          </div>
+  <div className="max-w-5xl mx-auto px-6 md:px-20">
+    {/* Use grid instead of flex for clean 2x2 mobile layout */}
+    <div className="grid grid-cols-2 md:flex md:flex-row md:justify-center gap-4 md:gap-10">
+      {steps.map((step, id) => (
+        <div
+          key={id}
+          className="bg-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center w-full h-32 text-black text-center"
+        >
+          {/* Icon */}
+          <div className="w-8 h-8 mb-1">{step.icon}</div>
+
+          {/* Number */}
+          <div className="text-3xl font-bold">{step.number}</div>
+
+          {/* Title */}
+          <div className="text-base mt-1">{step.title}</div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       <section className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-4 md:h-[400px] p-8 gap-8">
+        <div className="grid grid-cols-4 md:h-[400px] px-8 gap-8">
           {/* Left: Vision & Mission */}
           <div className="col-span-4 md:col-span-2 flex flex-col justify-center px-4 py-8">
             <h2 className="text-4xl font-bold text-gray-600 mb-4 tracking-widest">
@@ -365,12 +375,50 @@ const AboutHero = () => {
                     </h3>
                     <p className="text-sm px-4">{card.hoverDesc}</p>
                   </div>
+                  
                 </div>
               ))}
             </div>
           </div>
         </div>
       </section>
+      <section className="block md:hidden bg-gray-50 py-10 px-6">
+      <div className="grid grid-cols-2 gap-4">
+        {cardData.map((card, index) => (
+          <div
+            key={index}
+            className="relative w-full h-48 [perspective:1000px]"
+            onClick={() => handleFlip(index)}
+          >
+            <div
+              className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                flipped === index ? "[transform:rotateY(180deg)]" : ""
+              }`}
+            >
+              {/* FRONT SIDE */}
+              <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl overflow-hidden shadow-md">
+                <img
+                  src={card.img}
+                  alt={card.hoverTitle}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white px-2">
+                  <h3 className="text-xl font-semibold tracking-widest mb-1">
+                    {card.verticalText}
+                  </h3>
+                </div>
+              </div>
+
+              {/* BACK SIDE */}
+              <div className="absolute inset-0 bg-blue-700 text-white rounded-xl p-4 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-center items-center shadow-md">
+                <h2 className="text-lg font-bold text-yellow-400 mb-2">{card.hoverTitle}</h2>
+                <p className="text-xs leading-relaxed">{card.hoverDesc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
       {/* MemoryLane timeline below AboutHero */}
       <Timeline />
@@ -624,7 +672,7 @@ const AboutHero = () => {
                     className="cursor-pointer flex items-center justify-center px-6 py-3 text-lg font-semibold rounded border border-white/30 bg-white/10 text-white hover:bg-white/20 min-w-[200px] transition-colors duration-300"
                   >
                     <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
-                    Schedule a Call
+                    Call Us
                   </button>
                 </div>
               </div>

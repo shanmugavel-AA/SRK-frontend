@@ -83,7 +83,7 @@ export default function TestimonialCarousel() {
           spaceBetween={32}
           slidesPerView={4}
           autoplay={{
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           breakpoints={{
