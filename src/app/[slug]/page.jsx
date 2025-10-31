@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   const blog = res.data.find((b) => b.slug === slug);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sharathravikumar.com";
-  const blogUrl = `${slug}`;
+  const blogUrl = `${siteUrl}/${slug}`;
 
   if (!blog) {
     return {
