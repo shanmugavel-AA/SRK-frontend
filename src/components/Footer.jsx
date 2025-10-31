@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Linkedin , Instagram  } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin , Instagram, Facebook  } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const Footer = () => {
@@ -20,6 +20,11 @@ const Footer = () => {
     {
       icon: Instagram,
       href: "https://www.instagram.com/sharathravikumarr/",
+      label: "Instagram",
+    },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/share/1D39LkPUQe/?mibextid=wwXIfr",
       label: "Instagram",
     },
   ];

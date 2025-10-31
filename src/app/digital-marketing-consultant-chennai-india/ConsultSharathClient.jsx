@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
 import React, { useState, useRef } from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
@@ -43,12 +44,14 @@ const faqs = [
       "The brands are complementary one to another as they implement a combination of strategy, creativity, and technology to provide end-to-end marketing, branding, and digital transformation services to various industries.",
   },
   {
-    question: "How is Sharath Ravi Kumar Different From Other Digital Experts in India?",
+    question:
+      "How is Sharath Ravi Kumar Different From Other Digital Experts in India?",
     answer:
       "Sharath, unlike others, integrates his strategic thinking, coaching experience, and multi brand experience to provide an all encompassing development, brand positioning to performance-driven digital marketing.",
   },
   {
-    question: "How Does Sharath Ravi Kumar Contribute as An Author, Speaker, And Mentor?",
+    question:
+      "How Does Sharath Ravi Kumar Contribute as An Author, Speaker, And Mentor?",
     answer:
       "Sharath as a digital coach, guest professor, and author helps young marketers and business owners scale effectively by providing information about his industry through books, workshops, and sessions.",
   },
@@ -299,17 +302,16 @@ export default function HeroSection() {
     name: "",
     email: "",
     phone: "",
-    additionalData: {}
+    additionalData: {},
   });
 
   const handleform2Change = (e) => {
     setForm2Data({ ...form2Data, [e.target.name]: e.target.value });
   };
 
-  const handleform2Submit = async (e, link ,caseStudyId) => {
+  const handleform2Submit = async (e, link, caseStudyId) => {
     e.preventDefault();
     setLoading(true);
-
     try {
       // payload format matches backend model
       const payload = {
@@ -318,8 +320,8 @@ export default function HeroSection() {
         email: form2Data.email,
         phone: form2Data.phone,
         additionalData: {
-    caseStudyId: caseStudyId,
-  },
+          caseStudyId: caseStudyId,
+        },
       };
 
       await axios.post(
@@ -327,9 +329,12 @@ export default function HeroSection() {
         payload
       ); // backend endpoint
 
-      if (link) window.location.href = link;
+      setOpenFormId(null)
 
       setForm2Data({ name: "", email: "", phone: "" });
+
+      window.location.href = link;
+      
     } catch (err) {
       console.error(err);
       if (err.response && err.response.data) {
@@ -357,7 +362,6 @@ export default function HeroSection() {
 
   return (
     <>
-      
       {/* hero section */}
       <div className="w-full bg-white">
         <section className="relative h-[auto] md:h-[480px] mt-20">
@@ -391,7 +395,7 @@ export default function HeroSection() {
                 entrepreneurial vision.
               </p>
               <button
-                className="group flex items-center mb-2 md:mb-0 bg w-45 text-black px-2 py-3 rounded-md font-medium shadow overflow-hidden relative hover:bg-yellow-500"
+                className="cursor-pointer group flex items-center mb-2 md:mb-0 bg w-45 text-black px-2 py-3 rounded-md font-medium shadow overflow-hidden relative hover:bg-yellow-500"
                 aria-label="Call Us"
                 onClick={() => (window.location.href = "tel:+917200701455")}
               >
@@ -486,33 +490,32 @@ export default function HeroSection() {
 
       {/* brands */}
       <section className="max-w-7xl mx-auto px-6 py-12">
-  <div className="text-center mb-4">
-    <h2 className="text-4xl text-gray-700 font-bold mb-2">Our Brands</h2>
-    <p className="text-lg text-gray-600">
-      Proud portfolio with distinguished brands
-    </p>
-  </div>
+        <div className="text-center mb-4">
+          <h2 className="text-4xl text-gray-700 font-bold mb-2">Our Brands</h2>
+          <p className="text-lg text-gray-600">
+            Proud portfolio with distinguished brands
+          </p>
+        </div>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    {brands.map(({ id, logo, name }) => (
-      <div
-        key={id}
-        className="relative flex items-center justify-center p-4 group overflow-hidden"
-      >
-        {/* Logo Image */}
-        <img
-          src={logo}
-          alt={name}
-          className="max-h-20 w-full object-contain 
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          {brands.map(({ id, logo, name }) => (
+            <div
+              key={id}
+              className="relative flex items-center justify-center p-4 group overflow-hidden"
+            >
+              {/* Logo Image */}
+              <img
+                src={logo}
+                alt={name}
+                className="max-h-20 w-full object-contain 
                      transition-all duration-500 ease-in-out 
                      grayscale group-hover:grayscale-0 
                      scale-95 group-hover:scale-100"
-        />
-      </div>
-    ))}
-  </div>
-</section>
-
+              />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* case Studies */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 relative">
@@ -554,36 +557,36 @@ export default function HeroSection() {
                       {cs.desc}
                     </p>
 
-                    <div className="flex flex-col space-y-2">
-                      {cs.stats.map(
-                        ({ icon, title: statTitle, content }, i) => (
-                          <div
-                            key={i}
-                            className="flex items-center space-x-3 text-gray-800"
-                          >
-                            <div className="text-2xl md:text-3xl font-bold text-yellow-400">
-                              {icon}
-                            </div>
-                            <div className="flex space-x-1 text-sm md:text-base">
-                              <span className="text-md md:text-lg text-yellow-400">
-                                {statTitle}
-                              </span>
-                              <span className="mt-1">:</span>
-                              <span className="text-md md:text-lg text-gray-600">
-                                {content}
-                              </span>
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
+                    <div className="flex flex-col space-y-3">
+  {cs.stats.map(({ icon, title: statTitle, content }, i) => (
+    <div
+      key={i}
+      className="flex items-center space-x-2 md:space-x-3 text-gray-800 text-sm md:text-base"
+    >
+      {/* Icon */}
+      <div className="text-xl md:text-3xl font-bold text-yellow-400">
+        {icon}
+      </div>
+
+      {/* Text */}
+      <div className="flex items-center flex-wrap">
+        <span className="text-yellow-400 font-semibold text-base md:text-lg">
+          {statTitle}
+        </span>
+        <span className="mx-1">:</span>
+        <span className="text-gray-600 text-base md:text-lg">{content}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
                   </div>
 
                   {/* Bottom: View Case Study Button */}
                   <div className="self-start md:self-end mb-2 relative">
                     <button
                       onClick={() => setOpenFormId(cs.id)}
-                      className="inline-block w-full md:w-44 bg text-gray-800 font-semibold py-3 px-4 rounded transition"
+                      className="cursor-pointer inline-block w-full md:w-44 bg text-gray-800 font-semibold py-3 px-4 rounded transition"
                     >
                       View Case Study
                     </button>
@@ -624,7 +627,9 @@ export default function HeroSection() {
                             </h3>
                             <form
                               className="flex flex-col gap-2"
-                              onSubmit={(e) => handleform2Submit(e, cs.link, cs.id)}
+                              onSubmit={(e) =>
+                                handleform2Submit(e, cs.link, cs.id)
+                              }
                             >
                               {/* Name */}
                               <div className="flex flex-col text-left">
@@ -764,7 +769,7 @@ export default function HeroSection() {
           {/* Right side buttons with hover expand and icons */}
           <div className="flex gap-2 md:flex-none">
             <button
-              className="group flex items-center bg-yellow-400 text-black px-2 py-3 rounded-md font-medium shadow overflow-hidden relative hover:bg-yellow-500"
+              className="cursor-pointer group flex items-center bg-yellow-400 text-black px-2 py-3 rounded-md font-medium shadow overflow-hidden relative hover:bg-yellow-500"
               aria-label="Call Us"
               onClick={() => (window.location.href = "tel:+917200701455")}
             >
@@ -875,22 +880,22 @@ export default function HeroSection() {
                     Looking to grow your brand online?
                   </h3>
                   <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                    Talk to us and explore tailored digital strategies to create a large impact online.
+                    Talk to us and explore tailored digital strategies to create
+                    a large impact online.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <button
-                    type="button"
-                    onClick={handleGetInTouch}
-                    className="flex items-center justify-center px-6 py-3 text-lg font-semibold rounded bg-yellow-400 text-black"
+                  <Link
+                    href="/contact"
+                    className="cursor-pointer no-underline-effect flex items-center justify-center px-6 py-3 text-lg font-semibold rounded bg-yellow-400 text-black"
                   >
                     <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
                     Get In Touch
-                  </button>
+                  </Link>
                   <button
                     type="button"
                     onClick={handleScheduleCall}
-                    className="flex items-center justify-center px-6 py-3 text-lg font-semibold rounded border border-white/30 bg-white/10 text-white hover:bg-white/20 min-w-[200px] transition-colors duration-300"
+                    className="cursor-pointer flex items-center justify-center px-6 py-3 text-lg font-semibold rounded border border-white/30 bg-white/10 text-white hover:bg-white/20 min-w-[200px] transition-colors duration-300"
                   >
                     <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
                     Schedule a Call
@@ -901,7 +906,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-     
     </>
   );
 }

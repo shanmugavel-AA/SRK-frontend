@@ -145,7 +145,7 @@ const Contact = () => {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto overflow-hidden py-4">
+        <section className="max-w-7xl mx-auto overflow-hidden py-4 mt-10">
           <h2 className="text-center text-4xl text-gray-700 font-bold mb-12">
             Our Clients
           </h2>

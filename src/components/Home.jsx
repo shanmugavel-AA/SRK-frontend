@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 import {
   Navigation,
   Autoplay,
@@ -20,12 +21,12 @@ import "swiper/css/effect-fade";
 import InviteSection from "../components/InviteSection";
 import {
   FaLinkedinIn,
-  FaTwitter,
+  FaFacebookF,
   FaUserTie,
   FaPenNib,
   FaChalkboardTeacher,
+  FaInstagram,
 } from "react-icons/fa";
-import { useRouter } from "next/navigation";
 import { MdOutlineCastForEducation } from "react-icons/md";
 import { GiPublicSpeaker } from "react-icons/gi";
 import BlogSection from "../components/BlogSection";
@@ -43,15 +44,7 @@ const Hero = () => {
   const isInView = useInView(sectionRef, { once: true }); // Trigger once
   const imageControls = useAnimation();
   const textControls = useAnimation();
-  const router = useRouter();
 
-  const handleRegister = () => {
-    router.push("/contact");
-  };
-
-  const handleExplore = () => {
-    router.push("/social-media-expert-chennai-india");
-  };
 
   // When the section enters view, start animations
   if (isInView) {
@@ -180,18 +173,12 @@ const Hero = () => {
                   decade of experience. As a top Indian digital marketing
                   expert, he inspires growth, creativity and brand success.
                 </p>
-                <button
-                  onClick={handleExplore}
-                  className="bg text-black font-semibold px-6 py-3 md:mb-0 mb-2 rounded-lg"
-                >
+                <Link href="/social-media-expert-chennai-india" className="no-underline-effect bg text-black font-semibold px-6 py-3 md:mb-0 mb-2 rounded-lg">
                   Explore My Work
-                </button>
-                <button
-                  onClick={handleRegister}
-                  className="bg-yellow-400 mr-4 md:ml-2 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg"
-                >
+                </Link>
+                <Link href="/contact" className="no-underline-effect bg-yellow-400 mr-4 md:ml-2 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg">
                   Book an Appointment
-                </button>
+                </Link>
               </div>
 
               {/* Right image (was left image) */}
@@ -241,12 +228,12 @@ const Hero = () => {
                   With Gautam Vasudevan Menon as the face of the brand, this
                   collaboration blends creativity and credibility together.
                 </p>
-                <button className="bg text-black font-semibold px-6 py-3 md:mb-0 mb-2 rounded-lg">
+                <Link href="/social-media-expert-chennai-india" className="no-underline-effect bg text-black font-semibold px-6 py-3 md:mb-0 mb-2 rounded-lg">
                   Explore My Work
-                </button>
-                <button className="bg-yellow-400 mr-4 md:ml-2 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg">
+                </Link>
+                <Link href="/contact" className="no-underline-effect bg-yellow-400 mr-4 md:ml-2 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg">
                   Book an Appointment
-                </button>
+                </Link>
               </div>
 
               {/* Right image (was left image) */}
@@ -302,8 +289,8 @@ const Hero = () => {
               empowered businesses and brands to grow, thrive and unlock their
               potential digital success.
             </p>
-            <button
-              onClick={() => router.push("/contact")}
+            <Link
+              href="/contact"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
               className={`relative overflow-hidden px-8 py-1 h-20 rounded-lg border-2 font-semibold transition-colors duration-300 border-yellow-400 ${
@@ -330,7 +317,7 @@ const Hero = () => {
                 } z-0`}
                 style={{ pointerEvents: "none" }}
               />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -360,8 +347,8 @@ const Hero = () => {
             <h2 className="text-3xl md:text-4xl font-bold">About Sharath</h2>
             
 
-            <button
-              onClick={handleExplore}
+            <Link
+              href="/social-media-expert-chennai-india"
               className="relative overflow-hidden border-2 border-yellow-400 px-2 py-2 font-semibold text-yellow-400 text-xs rounded-lg"
               onMouseEnter={() => setReadHovered(true)}
               onMouseLeave={() => setReadHovered(false)}
@@ -382,7 +369,7 @@ const Hero = () => {
                 READ MORE
                 <span className="inline-block ml-1">→</span>
               </span>
-            </button>
+            </Link>
           </div>
           
 
@@ -395,7 +382,7 @@ const Hero = () => {
           </p>
 
           {/* Social icons row */}
-          <div className="flex space-x-5 mb-10">
+          {/* <div className="flex space-x-5 mb-10">
             <a
               href="https://www.linkedin.com/in/sharathravikumar/"
               target="_blank"
@@ -404,15 +391,23 @@ const Hero = () => {
             >
               <FaLinkedinIn size={18} />
             </a>
-            {/* <a
-              href="https://twitter.com/"
+            <a
+              href="https://www.facebook.com/share/1D39LkPUQe/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center transition"
             >
-              <FaTwitter size={18} />
-            </a> */}
-          </div>
+              <FaFacebookF size={18} />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1D39LkPUQe/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-pink-400 text-white rounded-full w-10 h-10 flex items-center justify-center transition"
+            >
+              <FaInstagram size={18} />
+            </a>
+          </div> */}
 
           {/* Info grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 md:gap-x-16 text-gray-800 text-base">
@@ -610,7 +605,7 @@ const Hero = () => {
         {/* Right side buttons with hover expand and icons */}
         <div className="flex gap-2 md:flex-none">
           <button
-            className="group flex items-center bg text-white px-6 py-3 rounded-md font-medium shadow overflow-hidden relative transition-all duration-300 ease-in-out hover:px-8"
+            className="group flex items-center cursor-pointer bg text-white px-6 py-3 rounded-md font-medium shadow overflow-hidden relative transition-all duration-300 ease-in-out hover:px-8"
             aria-label="Call Us"
             onClick={() => (window.location.href = "tel:+917200701455")}
           >
@@ -636,8 +631,8 @@ const Hero = () => {
           <div className="text-white w-40 md:w-full text-sm md:text-lg mb-2">
           Start today and grow digitally with Sharath Ravikumar.
           </div>
-          <button
-            onClick={handleRegister}
+          <Link
+            href="/contact"
             className="relative overflow-hidden w-30 md:w-35 mt-4 border-2 border-white p-1 font-semibold text-gray-800 text-sm rounded-sm"
             onMouseEnter={() => setRegHovered(true)}
             onMouseLeave={() => setRegHovered(false)}
@@ -656,7 +651,7 @@ const Hero = () => {
             >
               Register now!
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Image overlapping the section */}

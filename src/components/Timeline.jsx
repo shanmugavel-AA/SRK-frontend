@@ -119,89 +119,90 @@ const Timeline = () => {
         mm.add("(max-width: 767px)", () => setupAnimations(true));
 
         function setupAnimations(isMobile = false) {
-          const container = containerRef.current;
-          const lineEl = lineRef.current;
-          const items = (itemsRef.current || []).filter(Boolean);
-          const contents = (contentRefs.current || []).filter(Boolean);
-          const arrowEl = container?.querySelector("#lineArrow");
+  const container = containerRef.current;
+  const lineEl = lineRef.current;
+  const items = (itemsRef.current || []).filter(Boolean);
+  const contents = (contentRefs.current || []).filter(Boolean);
+  const arrowEl = container?.querySelector("#lineArrow");
 
-          if (!container || !lineEl || items.length === 0) return;
+  if (!container || !lineEl || items.length === 0) return;
 
-          visibleRef.current = items.map(() => false);
+  visibleRef.current = items.map(() => false);
 
-          const DUR_IN = isMobile ? 0.18 : 0.28;
-          const DUR_OUT = isMobile ? 0.15 : 0.22;
-          const X_OFFSET = isMobile ? 14 : 24;
-          const HYSTERESIS = 10;
+  const DUR_IN = isMobile ? 0.18 : 0.28;
+  const DUR_OUT = isMobile ? 0.15 : 0.22;
+  const X_OFFSET = isMobile ? 14 : 24;
+  const HYSTERESIS = isMobile ? 80 : 10; // 👈 Trigger later on mobile
 
-          gsapRef.set(items, { autoAlpha: 0, x: -X_OFFSET });
-          gsapRef.set(contents, { autoAlpha: 0, x: X_OFFSET });
+  gsapRef.set(items, { autoAlpha: 0, x: -X_OFFSET });
+  gsapRef.set(contents, { autoAlpha: 0, x: X_OFFSET });
 
-          const itemTop = (el) => (el ? el.offsetTop : 0);
-          const lastMid = () => {
-            const last = items[items.length - 1];
-            return last
-              ? (last.offsetTop || 0) + (last.offsetHeight || 0) + 50
-              : 0;
-          };
+  const itemTop = (el) => (el ? el.offsetTop : 0);
+  const lastMid = () => {
+    const last = items[items.length - 1];
+    return last
+      ? (last.offsetTop || 0) + (last.offsetHeight || 0) + (isMobile ? 200 : 50) // 👈 Slow down scroll
+      : 0;
+  };
 
-          const updateVisibility = (currentHeight) => {
-            items.forEach((item, idx) => {
-              const content = contents[idx];
-              if (!item || !content) return;
-              const top = itemTop(item);
-              const isVisible = visibleRef.current[idx];
-              if (!isVisible && currentHeight >= top + HYSTERESIS) {
-                visibleRef.current[idx] = true;
-                gsapRef.to([item, content], {
-                  autoAlpha: 1,
-                  x: 0,
-                  duration: DUR_IN,
-                  ease: "power2.out",
-                  overwrite: "auto",
-                  stagger: 0.05,
-                });
-              } else if (isVisible && currentHeight < top - HYSTERESIS) {
-                visibleRef.current[idx] = false;
-                gsapRef.to([item, content], {
-                  autoAlpha: 0,
-                  x: idx % 2 ? X_OFFSET : -X_OFFSET,
-                  duration: DUR_OUT,
-                  ease: "power2.in",
-                  overwrite: "auto",
-                  stagger: 0.03,
-                });
-              }
-            });
-          };
+  const updateVisibility = (currentHeight) => {
+    items.forEach((item, idx) => {
+      const content = contents[idx];
+      if (!item || !content) return;
+      const top = itemTop(item);
+      const isVisible = visibleRef.current[idx];
+      if (!isVisible && currentHeight >= top + HYSTERESIS) {
+        visibleRef.current[idx] = true;
+        gsapRef.to([item, content], {
+          autoAlpha: 1,
+          x: 0,
+          duration: DUR_IN,
+          ease: "power2.out",
+          overwrite: "auto",
+          stagger: 0.05,
+        });
+      } else if (isVisible && currentHeight < top - HYSTERESIS) {
+        visibleRef.current[idx] = false;
+        gsapRef.to([item, content], {
+          autoAlpha: 0,
+          x: idx % 2 ? X_OFFSET : -X_OFFSET,
+          duration: DUR_OUT,
+          ease: "power2.in",
+          overwrite: "auto",
+          stagger: 0.03,
+        });
+      }
+    });
+  };
 
-          gsapRef.fromTo(
-            lineEl,
-            { height: 0 },
-            {
-              height: lastMid,
-              ease: "none",
-              scrollTrigger: {
-                trigger: container,
-                start: isMobile ? "top top+=200" : "top top+=300",
-                end: () => `+=${lastMid()}`,
-                scrub: true,
-                invalidateOnRefresh: true,
-                autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-                onUpdate: (self) => {
-                  const h = self.progress * lastMid();
-                  updateVisibility(h);
-                  if (arrowEl) gsapRef.set(arrowEl, { y: h - 12 });
-                },
-                onRefresh: (self) => {
-                  const h = self.progress * lastMid();
-                  updateVisibility(h);
-                  if (arrowEl) gsapRef.set(arrowEl, { y: h - 12 });
-                },
-              },
-            }
-          );
-        }
+  gsapRef.fromTo(
+    lineEl,
+    { height: 0 },
+    {
+      height: lastMid,
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        start: isMobile ? "top top+=400" : "top top+=300", // 👈 Start later for mobile
+        end: () => `+=${lastMid()}`,
+        scrub: true,
+        invalidateOnRefresh: true,
+        autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+        onUpdate: (self) => {
+          const h = self.progress * lastMid();
+          updateVisibility(h);
+          if (arrowEl) gsapRef.set(arrowEl, { y: h - 12 });
+        },
+        onRefresh: (self) => {
+          const h = self.progress * lastMid();
+          updateVisibility(h);
+          if (arrowEl) gsapRef.set(arrowEl, { y: h - 12 });
+        },
+      },
+    }
+  );
+}
+
       }, containerRef);
     })();
 

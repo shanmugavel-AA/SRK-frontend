@@ -2,13 +2,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import Timeline from "../../components/Timeline";
-import { useRouter } from "next/navigation";
 import {
   CalendarDaysIcon,
   UsersIcon,
   ClipboardDocumentCheckIcon,
   BuildingOfficeIcon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 import { Mail, Phone, ChevronRight, ChevronLeft } from "lucide-react";
 import { PhoneIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
@@ -170,11 +170,6 @@ const steps = [
 ];
 
 const AboutHero = () => {
-  const router = useRouter();
-  
-  const handleGetInTouch = () => {
-    router.push("/contact"); // Navigate to contact us page
-  };
 
   const handleScheduleCall = () => {
     window.location.href = "tel:+1234567890"; // Replace with your phone number
@@ -240,12 +235,12 @@ const AboutHero = () => {
                 speaker, mentor, and business consultant with a record of
                 successful campaigns with impactful results.
               </p>
-              <button
-                onClick={handleGetInTouch}
-                className="inline-block w-60 px-6 py-3 font-semibold rounded-lg bg text-white hover:bg-blue-700 transition-colors duration-300"
+              <Link
+                href="/contact"
+                className="no-underline-effect inline-block w-60 px-6 py-3 font-semibold rounded-lg bg text-white hover:bg-blue-700 transition-colors duration-300"
               >
                 Get Sharath’s Insights
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -419,7 +414,7 @@ const AboutHero = () => {
           {/* Right side buttons with hover expand and icons */}
           <div className="flex gap-2 md:flex-none">
             <button
-              className="group flex items-center bg-yellow-400 text-black px-2 py-3 rounded-md font-medium shadow overflow-hidden relative hover:bg-yellow-500"
+              className="cursor-pointer group flex items-center bg-yellow-400 text-black px-2 py-3 rounded-md font-medium shadow overflow-hidden relative hover:bg-yellow-500"
               aria-label="Call Us"
               onClick={() => (window.location.href = "tel:+917200701455")}
             >
@@ -616,18 +611,17 @@ const AboutHero = () => {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <button
-                    type="button"
-                    onClick={handleGetInTouch}
-                    className="flex items-center justify-center px-6 py-3 text-lg font-semibold rounded bg-yellow-400 text-black"
+                  <Link
+                    href="/contact"
+                    className="no-underline-effect flex items-center justify-center px-6 py-3 text-lg font-semibold rounded bg-yellow-400 text-black"
                   >
                     <Mail className="mr-2 h-5 w-5" aria-hidden="true" />
                     Get In Touch
-                  </button>
+                  </Link>
                   <button
                     type="button"
                     onClick={handleScheduleCall}
-                    className="flex items-center justify-center px-6 py-3 text-lg font-semibold rounded border border-white/30 bg-white/10 text-white hover:bg-white/20 min-w-[200px] transition-colors duration-300"
+                    className="cursor-pointer flex items-center justify-center px-6 py-3 text-lg font-semibold rounded border border-white/30 bg-white/10 text-white hover:bg-white/20 min-w-[200px] transition-colors duration-300"
                   >
                     <Phone className="mr-2 h-5 w-5" aria-hidden="true" />
                     Schedule a Call

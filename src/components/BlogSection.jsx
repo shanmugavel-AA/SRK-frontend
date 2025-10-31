@@ -1,21 +1,16 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import axios from "axios";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import slugify from "../utils/slugify";
 import DateWithIcon from "../components/DateWithIcon";
 
 const BlogSection = () => {
   const [recentBlogs, setRecentBlogs] = useState([]);
   const [error, setError] = useState(null);
-  const router = useRouter();
-
-  const handleBlogs = () => {
-    router.push("/blog");
-  };
+ 
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -52,12 +47,12 @@ const BlogSection = () => {
           <p className="text-gray-700 font-medium mb-6 md:max-w-md">
             Read our blogs to stay informed with expert insights, helpful tips and guides
           </p>
-          <button
-            onClick={handleBlogs}
+          <Link
+            href="/blog"
             className="relative overflow-hidden w-24 border-2 border-gray-200 p-2 font-semibold text-gray-800 text-xs rounded-lg"
           >
             View All <span className="inline-block ml-1">→</span>
-          </button>
+          </Link>
         </div>
 
         {/* Right side: Recent blogs */}

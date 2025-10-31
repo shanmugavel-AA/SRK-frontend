@@ -8,7 +8,6 @@ import {
   Twitter,
   Linkedin,
   User,
-  MessageCircle,
   Tag,
   Calendar,
   Share2,
@@ -16,6 +15,7 @@ import {
 import FAQ from "../../components/FAQ";
 import axios from "axios";
 import slugify from "../../utils/slugify";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -304,7 +304,7 @@ export default function BlogDetail() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircle
+              <FaWhatsapp
                 size={22}
                 className="cursor-pointer text-green-500 hover:scale-125 transition"
               />
@@ -326,7 +326,7 @@ export default function BlogDetail() {
 
             {/* LinkedIn */}
             <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
                 currentUrl
               )}`}
               target="_blank"
