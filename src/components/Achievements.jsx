@@ -127,7 +127,7 @@ export default function Achievements() {
                   hoveredCard === idx
                     ? "scale-105 z-10"
                     : hoveredCard !== null
-                    ? "blur-xs opacity-100"
+                    ? ""
                     : ""
                 }`}
               onMouseEnter={() => {

@@ -188,12 +188,12 @@ const Header = () => {
 
         {/* Right Contact Button */}
         <div className="hidden md:block">
-          <button
-            onClick={() => router.push("/contact")}
+          <Link
+            href="/contact"
             className="bg text-black px-4 py-2 rounded-lg font-semibold cursor-pointer"
           >
             Contact
-          </button>
+          </Link>
         </div>
       </div>
 

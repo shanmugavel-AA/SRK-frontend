@@ -248,16 +248,23 @@ export default function BlogDetail() {
       <div className="w-full" ref={containerRef}>
         {/* Hero Image */}
         <div className="w-full mt-20 sm:mt-20">
-          <img
-            src={blogDetail.bannerUrl || blogDetail.imgUrl}
-            //           onLoad={() => {
-            //     import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => ScrollTrigger.refresh());
-            //   }}
-            alt={blogDetail.title}
-            title={blogDetail.title}
-            className="w-full h-60 sm:h-80 md:h-[500px] object-cover"
-          />
-        </div>
+  {/* Mobile Image */}
+  <img
+    src={blogDetail.imgUrl}
+    alt={blogDetail.title}
+    title={blogDetail.title}
+    className="block md:hidden w-full h-48 object-cover"
+  />
+
+  {/* Desktop Image */}
+  <img
+    src={blogDetail.bannerUrl}
+    alt={blogDetail.title}
+    title={blogDetail.title}
+    className="hidden md:block w-full h-[500px] object-cover"
+  />
+</div>
+
 
         {/* Meta Info */}
         <div className="max-w-5xl mx-auto py-6 px-4 flex flex-col md:flex-row md:items-center md:justify-between text-gray-700 text-sm sm:text-base border-b gap-4">
