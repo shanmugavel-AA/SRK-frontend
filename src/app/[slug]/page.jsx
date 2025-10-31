@@ -8,8 +8,8 @@ export async function generateMetadata({ params }) {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs`);
   const blog = res.data.find((b) => b.slug === slug);
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
-  const blogUrl = `${siteUrl}/blog/${slug}`;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sharathravikumar.com";
+  const blogUrl = `${siteUrl}/${slug}`;
 
   if (!blog) {
     return {
