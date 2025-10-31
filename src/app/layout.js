@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop"
 import StickyCtaForm from "../components/StickyCtaForm"
-import FormPopup from "../components/FormPopup";
 import { Poppins  } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 
@@ -22,7 +21,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={poppins.className}>
         <Header />
-        <FormPopup/>
+        
         {children}
         <Analytics />
         <Footer />
