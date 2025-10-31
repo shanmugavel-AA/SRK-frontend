@@ -35,7 +35,7 @@ export default function BlogDetail() {
       const siteUrl =
         process.env.NEXT_PUBLIC_SITE_URL || "https://sharathravikumar.com";
       const path = window.location.pathname;
-      setCurrentUrl(`${siteUrl}${path}`);
+      setCurrentUrl(`${path}`);
     }
   }, []);
 
