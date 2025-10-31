@@ -5,6 +5,7 @@ import ScrollToTop from "../components/ScrollToTop"
 import StickyCtaForm from "../components/StickyCtaForm"
 import { Poppins  } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
+import FormPopup from "../components/FormPopup.jsx";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={poppins.className}>
         <Header />
-        
+        <FormPopup />
         {children}
         <Analytics />
         <Footer />
