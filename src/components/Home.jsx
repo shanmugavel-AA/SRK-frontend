@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Navigation,
   Autoplay,
@@ -136,7 +137,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative max-w-screen-2xl mx-auto">
       {/* Hero Section */}
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
@@ -199,7 +200,7 @@ const Hero = () => {
         </SwiperSlide>
 
         {/* Slide 2: Just an Image */}
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <div className="flex justify-center items-center h-full mt-10">
             <img
               src="/assets/home-page/HOME PAGE LOGO BANNER copy.gif"
@@ -214,7 +215,7 @@ const Hero = () => {
               className="w-full h-[600px] object-contain md:hidden block"
             />
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         {/* Slide 3: Two-column Layout */}
         <SwiperSlide>
@@ -338,18 +339,26 @@ const Hero = () => {
       </section>
 
       {/* about me */}
-      <section className="flex flex-col gap-12 md:flex-row items-center md:items-start bg-white py-12 px-4 sm:px-8 md:px-16 lg:px-32">
+      <section className="max-w-9xl mx-auto flex flex-col gap-12 md:flex-row items-center md:items-start bg-white py-12 px-4 sm:px-8 md:px-16 lg:px-32">
         {/* Left: Photo with accent boxes */}
         <div className="relative w-full md:w-1/3 max-w-md mx-auto md:mx-0 md:ml-8 lg:ml-12 mb-12 md:mb-0">
           {/* Large accent box background */}
           <div className="absolute -top-6 -right-6 md:-top-8 md:-right-10 w-48 h-48 md:w-60 md:h-60 bg-yellow-400 rounded-md z-0"></div>
 
           {/* Profile photo */}
-          <img
-            src="/assets/home-page/about.webp"
-            alt="Profile"
-            className="relative w-full md:w-160 h-auto md:h-140 z-10 rounded-md"
-          />
+          <div className="relative z-10 rounded-md overflow-hidden">
+            <Image
+              src="/assets/home-page/about.webp"
+              alt="Profile"
+              width={360}
+              height={560}
+              sizes="(max-width: 768px) 100vw, 33vw" // responsive scaling
+              className="w-full h-auto rounded-md"
+              priority // keeps it high quality if visible on load
+              placeholder="blur"
+              blurDataURL="/assets/home-page/about.webp" // optional tiny blur preview
+            />
+          </div>
 
           {/* Small accent box bottom left */}
           <div className="absolute -bottom-4 -left-6 md:-bottom-6 md:-left-10 w-20 h-20 md:w-28 md:h-28 border-8 md:border-12 border-blue-700 rounded-md"></div>
