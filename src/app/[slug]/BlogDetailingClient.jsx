@@ -30,12 +30,16 @@ export default function BlogDetail() {
   const handleGetInTouch = () => {
     router.push("/contact");
   };
-  useEffect(() => {
+useEffect(() => {
   if (typeof window !== "undefined") {
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sharathravikumar.com";
-    setCurrentUrl(`${siteUrl}/${slug}`);
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.sharathravikumar.com";
+
+    // Clean the slug so even if it contains full URL or paths, it becomes just the last part
+    const cleanSlug = slug.replace(/^https?:\/\/[^/]+/, "").replace(/^\/+/, "");
+
+    setCurrentUrl(`${siteUrl}/${cleanSlug}`);
   }
-}, []);
+}, [slug]);
 
 
 
