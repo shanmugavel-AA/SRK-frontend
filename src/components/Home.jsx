@@ -537,12 +537,18 @@ const Hero = () => {
             >
               {slides.map((item, idx) => (
                 <SwiperSlide key={idx}>
-                  <img
-                    src={item.img}
-                    alt={`Slide ${idx}`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={item.img}
+                      alt={`Slide ${idx}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
+                      priority={idx === 0} // preload the first image for faster LCP
+                      placeholder="blur"
+                      blurDataURL="/assets/placeholder.webp" // optional small blurred placeholder
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>

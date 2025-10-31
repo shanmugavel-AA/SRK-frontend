@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 const achievementsData = [
   {
@@ -140,11 +141,18 @@ export default function Achievements() {
                 setHoveredCard(null);
               }}
             >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-110 object-cover"
-              />
+              <div className="relative w-full h-110">
+            <Image
+              src={item.img}
+              alt={item.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 
+                     (max-width: 1200px) 50vw, 
+                     33vw"
+              priority={idx === 0} // optional: prioritize first image
+            />
+          </div>
               <div className="p-4 flex flex-col flex-1">
                 <h4 className="text-xl font-semibold mb-2">{item.title}</h4>
                 <p className="text-gray-600 text-sm">{item.description}</p>
