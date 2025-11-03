@@ -7,7 +7,7 @@ const clients = [
   "/assets/About-page/auto/Mercedez.webp",
   "/assets/About-page/ecommerce/Chennai Silks.webp",
   "/assets/About-page/food/Palmshore.webp",
-  "/assets/About-page/real estate/VGN Homes.webp",
+  "/assets/client-page/ecommerce/Jayachandran.webp",
   "/assets/About-page/health care/kauvery_.webp",
   "/assets/About-page/mall webp/Palladium logo.webp",
   "/assets/About-page/real estate/hiranandani_.webp",
@@ -49,17 +49,29 @@ const desktopPositions = [
 
 // Mobile positions
 const mobilePositions = [
-  { top: "5%", left: "50%", translate: "-50%, 0" },
-  { top: "15%", left: "20%", translate: "-50%, -50%" },
-  { top: "25%", right: "20%", translate: "50%, -50%" },
-  { top: "38%", left: "10%", translate: "-50%, -50%" },
-  { top: "38%", right: "10%", translate: "50%, -50%" },
-  { bottom: "28%", left: "20%", translate: "-50%, 50%" },
-  { bottom: "28%", right: "20%", translate: "50%, 50%" },
-  { bottom: "15%", left: "50%", translate: "-50%, 50%" },
-  { bottom: "5%", left: "30%", translate: "-50%, 50%" },
-  { bottom: "5%", right: "30%", translate: "50%, 50%" },
+  // Top row (centered)
+  { top: "6%", left: "10%", translate: "-50%, 0" },
+
+  // Upper middle row (left and right)
+  { top: "18%", left: "5%", translate: "-50%, -50%" },
+  { top: "8%", right: "5%", translate: "50%, -50%" },
+
+  // Middle row (left and right)
+  { top: "30%", left: "10%", translate: "-50%, -50%" },
+  { top: "23%", right: "10%", translate: "50%, -50%" },
+
+  // Lower middle row (left and right)
+  { bottom: "30%", left: "5%", translate: "-50%, 50%" },
+  { bottom: "30%", right: "5%", translate: "50%, 50%" },
+
+  // Bottom center
+  { bottom: "20%", left: "50%", translate: "-50%, 50%" },
+
+  // Bottom corners (optional for symmetry)
+  { bottom: "20%", left: "5%", translate: "-50%, 50%" },
+  { bottom: "10%", right: "35%", translate: "50%, 50%" },
 ];
+
 
 export default function ClientHeroSection() {
   const [isMobile, setIsMobile] = useState(false);
