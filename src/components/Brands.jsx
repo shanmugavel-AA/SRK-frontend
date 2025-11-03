@@ -31,9 +31,9 @@ const OurBrands = () => {
           className="bg-blue-800 bg-opacity-20 backdrop-blur-md shadow-lg rounded-xl flex items-center justify-center h-40 transition-transform transform hover:scale-105 border border-gray-200 dark:border-gray-600"
         >
           <img
-            src="https://www.webboombaa.org/wp-content/uploads/2025/03/WBB-Logo-for-Animation-White-2.gif"
+            src="/assets/home-page/wbblogo.webp"
             alt="Brand 1"
-            className="h-16 md:h-24 object-contain"
+            className="w-full h-full object-contain rounded-xl"
             loading="lazy"
           />
         </motion.div>
@@ -45,12 +45,12 @@ const OurBrands = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={cardVariants}
-          className="bg-white bg-opacity-20 backdrop-blur-md shadow-lg rounded-xl flex items-center justify-center h-40 transition-transform transform hover:scale-105 border border-gray-200 dark:border-gray-600"
+          className="backdrop-blur-md shadow-lg rounded-xl flex items-center justify-center h-40 transition-transform transform hover:scale-105 border border-gray-200 dark:border-gray-600"
         >
           <img
-            src="https://www.greatindiansweets.com/wp-content/uploads/2024/06/Main-Logo-Orange.png"
+            src="/assets/home-page/GISlogo.webp"
             alt="Brand 2"
-            className="h-16 md:h-24 object-contain"
+            className="w-full h-full object-contain rounded-xl"
             loading="lazy"
           />
         </motion.div>
@@ -62,12 +62,12 @@ const OurBrands = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={cardVariants}
-          className="bg-black bg-opacity-20 backdrop-blur-md shadow-lg rounded-xl flex items-center justify-center h-40 transition-transform transform hover:scale-105 border border-gray-200 dark:border-gray-600"
+          className="backdrop-blur-md shadow-lg rounded-xl flex items-center justify-center h-40 transition-transform transform hover:scale-105 border border-gray-200 dark:border-gray-600"
         >
           <img
-            src="https://greatindianbeverages.com/wp-content/uploads/2023/03/gib-logo.png"
+            src="/assets/home-page/GIBlogo.webp"
             alt="Brand 3"
-            className="h-16 md:h-24 object-contain"
+            className="w-full h-full object-contain rounded-xl"
             loading="lazy"
           />
         </motion.div>
@@ -85,7 +85,7 @@ const OurBrands = () => {
             src="/assets/home-page/BMW.webp"
             alt="Brand 4"
             fill
-            className="h-12 md:h-12 object-contain rounded-xl"
+            className="w-full h-full object-contain rounded-xl"
             loading="lazy"
           />
         </motion.div>

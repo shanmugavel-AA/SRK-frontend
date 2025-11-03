@@ -1,21 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import { GraduationCap, HeartPulse, ShoppingBag } from "lucide-react";
+import { Building2 , HeartPulse, ShoppingBag , BookOpenText , Car , ChefHat , Landmark , LibraryBig ,ShoppingCart , Cpu } from "lucide-react";
 import Testimonials from "../../components/Testimonials";
+import { motion , AnimatePresence} from "framer-motion";
+import Image from "next/image";
 
 const Clients = () => {
   const categories = [
-    { name: "Real Estate", icon: GraduationCap },
+    { name: "Real Estate", icon: Building2 },
     { name: "Healthcare", icon: HeartPulse },
-    { name: "Education", icon: ShoppingBag },
-    { name: "Automobile", icon: ShoppingBag },
+    { name: "Education", icon: BookOpenText },
+    { name: "Automobile", icon: Car },
     { name: "Mall", icon: ShoppingBag },
-    { name: "Food & Beverage", icon: ShoppingBag },
-    { name: "Banking", icon: ShoppingBag },
-    { name: "Political", icon: ShoppingBag },
-    { name: "E-commerce & Retail", icon: ShoppingBag },
-    { name: "Information Technology", icon: ShoppingBag },
+    { name: "Food & Beverage", icon: ChefHat },
+    { name: "Banking", icon: Landmark },
+    { name: "Political", icon: LibraryBig },
+    { name: "E-commerce & Retail", icon: ShoppingCart },
+    { name: "Information Technology", icon: Cpu },
   ];
 
   const brands = [
@@ -310,42 +312,26 @@ const Clients = () => {
 
   const [activeCategory, setActiveCategory] = useState("Real Estate");
 
-  const filteredBrands = brands.filter(
-    (brand) => brand.category === activeCategory
-  );
+  const handleCategoryClick = (name) =>{
+    setActiveCategory((prev) => (prev === name ? null : name));
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.1, duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <div>
-      {/* Flip effect styles */}
-      <style>{`
-        .perspective {
-          perspective: 1000px;
-        }
-        .flip-card {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          transition: transform 0.6s;
-          transform-style: preserve-3d;
-        }
-        .group:hover .flip-card {
-          transform: rotateY(180deg);
-        }
-        .flip-card-front,
-        .flip-card-back {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          backface-visibility: hidden;
-          top: 0;
-          left: 0;
-        }
-        .flip-card-back {
-          transform: rotateY(180deg);
-        }
-      `}</style>
-
-      {/* Hero Section */}
       <section className="relative h-[200px] bg-blue-600 flex items-center justify-center mt-20">
         <div className="absolute inset-0 bg-blue-800/60"></div>
         <div className="relative z-10 text-center">
@@ -357,81 +343,71 @@ const Clients = () => {
           </p>
         </div>
       </section>
+      <section className="max-w-6xl mx-auto px-4 py-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+        Our Esteemed Clients
+      </h2>
 
-      {/* Two Column Layout */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-rows-4 gap-4">
-  {/* Top Section (Filters) */}
-  <div className="md:row-span-2 backdrop-blur-md p-6">
-  <h3 className="text-2xl font-bold mb-6 text-blue-700">
-    Our Clients
-  </h3>
+      <div className="space-y-6">
+        {categories.map(({ name, icon: Icon }) => {
+          const filteredBrands = brands.filter((b) => b.category === name);
+          const isActive = activeCategory === name;
 
-  {/* Make categories side by side */}
-  <div className="flex flex-wrap gap-4">
-    {categories.map(({ name, icon: Icon }) => (
-      <button
-        key={name}
-        onClick={() => setActiveCategory(name)}
-        className={`flex items-center gap-2 px-5 py-3 rounded-xl transition font-medium ${
-          activeCategory === name
-            ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md"
-            : "bg-gray-50 text-gray-700 hover:bg-gray-100"
-        }`}
-      >
-        <Icon
-          size={18}
-          className={`${
-            activeCategory === name ? "text-white" : "text-gray-500"
-          }`}
-        />
-        {name}
-      </button>
-    ))}
-  </div>
-</div>
-
-
-  {/* Bottom Section (Client Grid) */}
-  <div className="md:row-span-2">
-    <div className="grid gap-6 grid-cols-[repeat(auto-fit,_minmax(100px,_3fr))]">
-      {filteredBrands.map(({ id, logo, name, link }) => (
-        <div
-          key={id}
-          className={`relative w-full max-w-xs ${
-            link ? "group perspective cursor-pointer" : ""
-          } min-h-36 flex items-stretch`}
-        >
-          {link ? (
-            <div className="flip-card h-full">
-              <div className="flip-card-front flex items-center justify-center bg-white p-2 h-full">
-                <img
-                  src={logo}
-                  alt={name}
-                  className="max-h-20 object-contain w-full"
-                />
-              </div>
-              <a
-                href={link}
-                className="flip-card-back flex items-center justify-center bg-blue-600 text-white font-semibold text-lg rounded-xl shadow h-full"
+          return (
+            <div key={name} className="border-b border-gray-200 pb-4">
+              {/* Category Header */}
+              <button
+                onClick={() => handleCategoryClick(name)}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition"
               >
-                View Case Study
-              </a>
-            </div>
-          ) : (
-            <div className="flex items-center justify-center bg-white p-2 h-full w-full">
-              <img
-                src={logo}
-                alt={name}
-                className="max-h-20 object-contain w-full"
-              />
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+                <div className="flex items-center gap-3">
+                  <Icon className="w-5 h-5 text-blue-600" />
+                  <span className="font-semibold text-lg">{name}</span>
+                </div>
+                <span className="text-gray-500 text-sm">
+                  {isActive ? "−" : "+"}
+                </span>
+              </button>
 
+              {/* Logos Section (Animated) */}
+              <AnimatePresence>
+                {isActive && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-6 px-4">
+                      {filteredBrands.map((brand) => (
+                        <motion.div
+                          key={brand.id}
+                          whileHover={{ scale: 1.05 }}
+                          className="flex flex-col items-center"
+                        >
+                          <div className="w-28 h-20 relative">
+                            <Image
+                              src={brand.logo}
+                              alt={brand.name}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                          <p className="text-sm text-gray-600 mt-2 text-center">
+                            {brand.name}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
+      </div>
+    </section>
 
       <section>
         <Testimonials />

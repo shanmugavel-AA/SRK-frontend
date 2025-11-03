@@ -32,6 +32,7 @@ import { MdOutlineCastForEducation } from "react-icons/md";
 import { GiPublicSpeaker } from "react-icons/gi";
 import BlogSection from "../components/BlogSection";
 import Achievements from "../components/Achievements";
+import ClientHeroSection from "./ClientHeroSection";
 import Brands from "../components/Brands";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -143,7 +144,7 @@ const Hero = () => {
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
         fadeEffect={{ crossFade: true }}
-        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        autoplay={{ delay: 12000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop={true}
         className="w-full h-[600px] md:h-[750px] relative"
@@ -200,22 +201,9 @@ const Hero = () => {
         </SwiperSlide>
 
         {/* Slide 2: Just an Image */}
-        {/* <SwiperSlide>
-          <div className="flex justify-center items-center h-full mt-10">
-            <img
-              src="/assets/home-page/HOME PAGE LOGO BANNER copy.gif"
-              title="client banner"
-              alt="client banner"
-              className="w-full h-[600px] object-contain md:block hidden"
-            />
-            <img
-              src="/assets/home-page/mobile-version-first.gif"
-              alt="client banner"
-              title="client banner"
-              className="w-full h-[600px] object-contain md:hidden block"
-            />
-          </div>
-        </SwiperSlide> */}
+        <SwiperSlide>
+          <ClientHeroSection />
+        </SwiperSlide>
 
         {/* Slide 3: Two-column Layout */}
         <SwiperSlide>
@@ -350,7 +338,7 @@ const Hero = () => {
             <Image
               src="/assets/home-page/about.webp"
               alt="Profile"
-              width={360}
+              width={420}
               height={560}
               sizes="(max-width: 768px) 100vw, 33vw" // responsive scaling
               className="w-full h-auto rounded-md"
@@ -368,7 +356,7 @@ const Hero = () => {
         <div className="w-full md:flex-1 md:ml-16 lg:ml-20 max-w-2xl pr-4">
           {/* Heading + button */}
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold">About Sharath</h2>
+            <h2 className="text-2xl md:text-4xl font-bold">About Sharath</h2>
 
             <Link
               href="/social-media-expert-chennai-india"
@@ -390,7 +378,7 @@ const Hero = () => {
                 } transition-colors duration-300`}
               >
                 READ MORE
-                <span className="inline-block ml-1">→</span>
+                <span className="inline-block md:ml-1">→</span>
               </span>
             </Link>
           </div>
@@ -543,7 +531,7 @@ const Hero = () => {
                       alt={`Slide ${idx}`}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       priority={idx === 0} // preload the first image for faster LCP
                       placeholder="blur"
                       blurDataURL="/assets/placeholder.webp" // optional small blurred placeholder
