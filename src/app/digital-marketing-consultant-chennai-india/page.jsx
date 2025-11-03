@@ -9,7 +9,7 @@ export async function generateMetadata() {
 
   return {
     title: meta?.title || "Consult | SRK",
-    description: meta?.description || "SRK Consult page description",
+    description: meta?.description || "SRK Consult page",
     keywords: meta?.keywords,
     alternates: { canonical: meta?.canonical || `${baseUrl}/consult` },
     openGraph: {
